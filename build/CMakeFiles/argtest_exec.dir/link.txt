@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -std=c++2a  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/argtest_exec.dir/workload_generator.cpp.o  -o argtest_exec 

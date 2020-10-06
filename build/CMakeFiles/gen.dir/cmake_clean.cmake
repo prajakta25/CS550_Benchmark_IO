@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gen.dir/workload_generator.cpp.o"
-  "gen"
   "gen.pdb"
+  "gen"
 )
 
 # Per-language clean rules from dependency scanning.

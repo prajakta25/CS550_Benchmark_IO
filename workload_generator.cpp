@@ -102,14 +102,14 @@ public:
         VerifyArgs();
     }
 };
-/*void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t p, size_t bs, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
+void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t p, size_t bs, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
 {
-    io->Read(fn , bs, p, wcnt, rcnt, stat);
-    io->Write(fn , bs, p, wcnt, rcnt, stat);
-    io->AsyncRead(fn , bs, p, wcnt, rcnt, stat);
-    io->AsyncWrite(fn , bs, p, wcnt, rcnt, stat);
+    io->Read(fn , bs, p, wcnt, rcnt);
+    io->Write(fn , bs, p, wcnt, rcnt);
+    io->AsyncRead(fn , bs, p, wcnt, rcnt);
+    io->AsyncWrite(fn , bs, p, wcnt, rcnt);
     
-}*/
+}
 
 int main(int argc, char **argv)
 {
@@ -126,6 +126,6 @@ int main(int argc, char **argv)
     //Get I/O Client
     std::shared_ptr<bench::FileIO> io  = bench::FileIOFactory::Get(client);
     //Run the workload generator
-    //file_workload_generator(io,fn,bs,ps,wcnt,rcnt,stat);
+    file_workload_generator(io,fn,bs,ps,wcnt,rcnt,stat);
     return 0;
 }

@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -std=c++2a  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/gen.dir/workload_generator.cpp.o  -o gen 
+/usr/bin/c++     CMakeFiles/gen.dir/workload_generator.cpp.o  -o gen -lrt 

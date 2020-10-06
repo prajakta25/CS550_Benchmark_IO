@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.10)
 project(benchmark_proj)
 
 # Create test executable
-
+SET(CMAKE_EXE_LINK_FLAGS "-lrt")
+add_definitions(${CMAKE_EXE_LINK_FLAGS})
 add_executable(gen workload_generator.cpp)
+target_link_libraries(gen ${CMAKE_EXE_LINK_FLAGS})
 
 # Enable tests
 option(BUILD_TEST "Build the unit tests" OFF)
