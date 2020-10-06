@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <chrono>
+#include <cstring>
 
 
 namespace bench
@@ -13,7 +14,7 @@ namespace bench
 class PosixIO : public FileIO
 {
 public:
-    void Read(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt, float worthless)
+    void Read(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
     {
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         char *rbuffer = (char *)malloc(sizeof(char) * bs);
@@ -30,7 +31,7 @@ public:
         close(fd);
         free(rbuffer);
     }
-    void Write(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt, float worthless)
+    void Write(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
     {
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         char *wbuffer = (char *)malloc(sizeof(char) * bs);
@@ -60,7 +61,7 @@ public:
         close(f);
         free(wbuffer);
     }
-    void AsyncRead(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt, float worthless)
+    void AsyncRead(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt)
     {
         aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -99,7 +100,7 @@ public:
         close(file);
         free(rbuffer);
     }
-    void AsyncWrite(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt, float worthless)
+    void AsyncWrite(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
     {
         aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -150,6 +151,12 @@ public:
         std::cout << "AIO Write\t" << p << "\t" << time_taken << std::endl;
         close(fd);
         free(wbuffer);
+    }
+    void Poll () {
+         std::cout<<"";
+    }
+    void Stat(){
+        std::cout<<"";
     }
 };
 

@@ -1,4 +1,5 @@
 #include "posix_io.cpp"
+#include <memory>
 namespace bench {
 
 enum class FileIOType {
