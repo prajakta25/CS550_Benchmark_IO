@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named gen
+# Target rules for targets named generator
 
 # Build rule for target.
-gen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gen
-.PHONY : gen
+generator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generator
+.PHONY : generator
 
 # fast build rule for target.
-gen/fast:
-	$(MAKE) -f CMakeFiles/gen.dir/build.make CMakeFiles/gen.dir/build
-.PHONY : gen/fast
+generator/fast:
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
+.PHONY : generator/fast
 
 workload_generator.o: workload_generator.cpp.o
 
@@ -129,7 +129,7 @@ workload_generator.o: workload_generator.cpp.o
 
 # target to build an object file
 workload_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/gen.dir/build.make CMakeFiles/gen.dir/workload_generator.cpp.o
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/workload_generator.cpp.o
 .PHONY : workload_generator.cpp.o
 
 workload_generator.i: workload_generator.cpp.i
@@ -138,7 +138,7 @@ workload_generator.i: workload_generator.cpp.i
 
 # target to preprocess a source file
 workload_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/gen.dir/build.make CMakeFiles/gen.dir/workload_generator.cpp.i
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/workload_generator.cpp.i
 .PHONY : workload_generator.cpp.i
 
 workload_generator.s: workload_generator.cpp.s
@@ -147,7 +147,7 @@ workload_generator.s: workload_generator.cpp.s
 
 # target to generate assembly for a file
 workload_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/gen.dir/build.make CMakeFiles/gen.dir/workload_generator.cpp.s
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/workload_generator.cpp.s
 .PHONY : workload_generator.cpp.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... gen"
+	@echo "... generator"
 	@echo "... edit_cache"
 	@echo "... workload_generator.o"
 	@echo "... workload_generator.i"
