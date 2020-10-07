@@ -71,7 +71,9 @@ public:
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         int rec_size = p;
         char *rbuffer = (char *)malloc(sizeof(char) * rec_size);
+        memset(&cb, 0, sizeof(struct aiocb));
         cb.aio_buf = rbuffer;
+        cb.aio_nbytes = p;
         int file = open(fn.c_str(), O_RDONLY, 0);
 
         if (file == -1)
@@ -106,7 +108,7 @@ public:
     }
     void AsyncWrite(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
     {
-        aiocb cb;
+        struct aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         int rec_size = p;
         char *wbuffer = (char *)malloc(sizeof(char) * rec_size);
@@ -116,7 +118,10 @@ public:
             std::cout << "file cannot be opened";
         }
         //fill the buffer with  data
+        memset(&cb, 0, sizeof(struct aiocb));
+        cb.aio_nbytes=p;
         cb.aio_fildes = fd;
+
         for (int i = 0; i < rec_size; i++)
         {
             wbuffer[i] = 'a';

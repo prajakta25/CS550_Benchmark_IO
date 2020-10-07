@@ -58,6 +58,7 @@ public:
         */
         AddOpt("-client", common::args::ArgType::kStringMap);
         AddStringMapVal("-client", "Posix", static_cast<int>(bench::FileIOType::kPosixIO));
+        AddStringMapVal("-client", "PosixAsync", static_cast<int>(bench::FileIOType::kPosixIO));
         AddStringMapVal("-client", "Mmap", static_cast<int>(bench::FileIOType::kmmapIO));
         AddStringMapVal("-client", "UMmap", static_cast<int>(bench::FileIOType::kUmapIO));
 
@@ -85,12 +86,6 @@ public:
 
         AddOpt("-bs", common::args::ArgType::kSize, 4 * KB);
 
-        /*
-            These integer inputs with default value of 0.
-            Technically, it can be positive or negative.
-
-        */
-
         AddOpt("-wcnt", common::args::ArgType::kInt, 0);
 
         AddOpt("-rcnt", common::args::ArgType::kInt, 0);
@@ -99,9 +94,6 @@ public:
 
         AddOpt("-ps", common::args::ArgType::kSize, 4 * KB);
 
-        /*
-            This is a flag input. It is either set or it is not.
-        */
         AddOpt("-h", common::args::ArgType::kNone);
 
         /*Parse and verify the arguments*/
@@ -109,14 +101,14 @@ public:
         VerifyArgs();
     }
 };
-void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t p, size_t bs, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
+void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
 {
     
-    io->Write(fn , p, bs, wcnt, rcnt);
-    io->Read(fn , p, bs, wcnt, rcnt);
+    io->Write(fn , bs, p, wcnt, rcnt);
+    io->Read(fn , bs, p, wcnt, rcnt);
     
-    //io->AsyncWrite(fn , p, bs, wcnt, rcnt);
-    //io->AsyncRead(fn , p, bs, wcnt, rcnt);
+    io->AsyncWrite(fn , bs, p, wcnt, rcnt);
+    io->AsyncRead(fn , bs, p, wcnt, rcnt);
     
 }
 
