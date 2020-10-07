@@ -1,7 +1,10 @@
 #include "file_io_factory.cpp"
-#include "arguments.h"
+
 #include <iostream>
 #include <memory>
+
+#include "arguments.h"
+
 #define KB (1ul << 10)
 
 class ArgsParser : public common::args::ArgMap
@@ -109,11 +112,11 @@ public:
 void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t p, size_t bs, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
 {
     
-    io->Write(fn , bs, p, wcnt, rcnt);
-    io->Read(fn , bs, p, wcnt, rcnt);
+    io->Write(fn , p, bs, wcnt, rcnt);
+    io->Read(fn , p, bs, wcnt, rcnt);
     
-    io->AsyncWrite(fn , bs, p, wcnt, rcnt);
-    io->AsyncRead(fn , bs, p, wcnt, rcnt);
+    //io->AsyncWrite(fn , p, bs, wcnt, rcnt);
+    //io->AsyncRead(fn , p, bs, wcnt, rcnt);
     
 }
 

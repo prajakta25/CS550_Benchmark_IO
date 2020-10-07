@@ -1,12 +1,15 @@
 #include "file_io.cpp"
-#include <iostream>
+
 #include <sys/types.h>
 #include <aio.h>
 #include <unistd.h>
 #include <fcntl.h>
+
+#include <iostream>
 #include <chrono>
 #include <cstring>
 
+#define KB (1ul << 10)
 
 namespace bench
 {
@@ -27,7 +30,7 @@ public:
             ;
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Read\t" << p << "\t" << time_taken << std::endl;
+        std::cout << "Read\t" << p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         close(fd);
         free(rbuffer);
     }
@@ -48,8 +51,9 @@ public:
         }
         for (int i = 0; i < len; i++)
         {
-            if (write(f, wbuffer, bs) == -1)
-            {
+            int n=0;
+            if ((n=write(f, wbuffer, bs)) == -1)
+            {  
                 std::cout << " Error at write(): %s" << strerror(errno) << std::endl;
                 close(f);
                 exit(2);
@@ -57,7 +61,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Write\t" << p << "\t" << time_taken << std::endl;
+        std::cout << "Write\t" << p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         close(f);
         free(wbuffer);
     }
@@ -93,7 +97,7 @@ public:
         {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "AIO Read\t" << p << "\t" << time_taken << std::endl;
+            std::cout << "AIO Read\t" <<  p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         }
         else
             std::cout << "Error!" << std::endl;
@@ -148,7 +152,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "AIO Write\t" << p << "\t" << time_taken << std::endl;
+        std::cout << "AIO Write\t" << p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         close(fd);
         free(wbuffer);
     }
