@@ -1,3 +1,6 @@
+#ifndef POSIX_IO_CPP
+#define POSIX_IO_CPP
+
 #include "file_io.cpp"
 
 #include <sys/types.h>
@@ -170,3 +173,5 @@ public:
 };
 
 } // namespace bench
+
+#endif

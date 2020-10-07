@@ -107,8 +107,8 @@ void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn ,
     io->Write(fn , bs, p, wcnt, rcnt);
     io->Read(fn , bs, p, wcnt, rcnt);
     
-    io->AsyncWrite(fn , bs, p, wcnt, rcnt);
-    io->AsyncRead(fn , bs, p, wcnt, rcnt);
+    //io->AsyncWrite(fn , bs, p, wcnt, rcnt);
+    //io->AsyncRead(fn , bs, p, wcnt, rcnt);
     
 }
 
