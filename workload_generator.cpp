@@ -1,6 +1,7 @@
 #include "file_io_factory.cpp"
 #include "arguments.h"
 #include <iostream>
+#include <memory>
 #define KB (1ul << 10)
 
 class ArgsParser : public common::args::ArgMap
@@ -15,7 +16,7 @@ private:
     {
         AssertOptIsSet("-client");
         AssertOptIsSet("-fn");
-         AssertOptIsSet("-p");
+        AssertOptIsSet("-ps");
     }
 
 public:
@@ -62,6 +63,8 @@ public:
             It has the default value of empty.
             This is a required argument and thus does not have a default value.
         */
+        AddOpt("-ps", common::args::ArgType::kSize, 4 * KB);
+
         AddOpt("-fn", common::args::ArgType::kString);
 
         /*
@@ -76,6 +79,7 @@ public:
 
             The default value of this is 4*KB.
         */
+
         AddOpt("-bs", common::args::ArgType::kSize, 4 * KB);
 
         /*
@@ -104,10 +108,12 @@ public:
 };
 void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t p, size_t bs, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
 {
-    io->Read(fn , bs, p, wcnt, rcnt);
+    
     io->Write(fn , bs, p, wcnt, rcnt);
-    io->AsyncRead(fn , bs, p, wcnt, rcnt);
+    io->Read(fn , bs, p, wcnt, rcnt);
+    
     io->AsyncWrite(fn , bs, p, wcnt, rcnt);
+    io->AsyncRead(fn , bs, p, wcnt, rcnt);
     
 }
 
