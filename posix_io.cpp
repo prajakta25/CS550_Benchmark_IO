@@ -29,7 +29,7 @@ public:
         int fd = open(fn.c_str(), O_SYNC | O_RDONLY, 0);
         if (fd == -1)
         {
-            std::cout << "file cannot be opened";
+            std::cout << "File cannot be opened\n";
         }
         while (read(fd, rbuffer, bs) != 0)
             ;
@@ -46,7 +46,7 @@ public:
         int f = open(fn.c_str(), O_SYNC | O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
         if (f == -1)
         {
-            std::cout << "file cannot be opened";
+            std::cout << "File cannot be opened\n";
         }
         int len = p / bs;
 
@@ -59,7 +59,7 @@ public:
             int n=0;
             if ((n=write(f, wbuffer, bs)) == -1)
             {  
-                std::cout << " Error at write(): %s" << strerror(errno) << std::endl;
+                std::cout << " Error at write(): " << strerror(errno) << std::endl;
                 close(f);
                 exit(2);
             }
@@ -120,7 +120,7 @@ public:
         int fd = open(fn.c_str(), O_SYNC | O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
         if (fd == -1)
         {
-            std::cout << "file cannot be opened";
+            std::cout << "File cannot be opened\n";
         }
         //fill the buffer with  data
         memset(&cb, 0, sizeof(struct aiocb));
@@ -134,7 +134,7 @@ public:
         cb.aio_buf = wbuffer;
         if (aio_write(&cb) == -1)
         {
-            std::cout << " Error at aio_write(): %s" << strerror(errno) << std::endl;
+            std::cout << " Error at aio_write(): " << strerror(errno) << std::endl;
             close(fd);
             exit(2);
         }
@@ -148,7 +148,7 @@ public:
 
         if (err != 0)
         {
-            std::cout << " Error at aio_error() : %s\n"
+            std::cout << " Error at aio_error() : \n"
                  << strerror(err);
             close(fd);
             exit(2);
