@@ -38,7 +38,7 @@ public:
         std::cout << "-bs [size]: The block size for I/O requests. Each Read()/Write() will write this amount of data" << std::endl;
         std::cout << "-rcnt [int]: The number of read requests to generate" << std::endl;
         std::cout << "-wcnt [int]: The number of write requests to generate" << std::endl;
-        std::cout << "-stat [float]: The number of stat requests to generate." << std::endl;
+        std::cout << "-stat [int]: The number of stat requests to generate." << std::endl;
         std::cout << "-h: Print this help message" << std::endl;
 
         std::cout << std::endl;
@@ -106,6 +106,7 @@ void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn ,
     
     io->Write(fn , bs, p, wcnt, rcnt);
     io->Read(fn , bs, p, wcnt, rcnt);
+    io->Stat(fn,stat);
     
     //io->AsyncWrite(fn , bs, p, wcnt, rcnt);
     //io->AsyncRead(fn , bs, p, wcnt, rcnt);
