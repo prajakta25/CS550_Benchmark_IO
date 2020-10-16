@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/generator.dir/workload_generator.cpp.o  -o generator -lrt 
+/usr/bin/c++     CMakeFiles/generator.dir/workload_generator.cpp.o  -o generator -Wl,-rpath,/home/prajakta/CS550_Benchmark_IO/lib -lrt ../lib/libumap.so 

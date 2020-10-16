@@ -90,6 +90,7 @@ generator_EXTERNAL_OBJECTS =
 
 generator: CMakeFiles/generator.dir/workload_generator.cpp.o
 generator: CMakeFiles/generator.dir/build.make
+generator: ../lib/libumap.so
 generator: CMakeFiles/generator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/prajakta/CS550_Benchmark_IO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable generator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/generator.dir/link.txt --verbose=$(VERBOSE)
