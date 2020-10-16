@@ -4,6 +4,10 @@
 CMakeFiles/generator.dir/workload_generator.cpp.o: ../arguments.h
 CMakeFiles/generator.dir/workload_generator.cpp.o: ../file_io.cpp
 CMakeFiles/generator.dir/workload_generator.cpp.o: ../file_io_factory.cpp
+CMakeFiles/generator.dir/workload_generator.cpp.o: ../include/umap/store/Store.hpp
+CMakeFiles/generator.dir/workload_generator.cpp.o: ../include/umap/umap.h
+CMakeFiles/generator.dir/workload_generator.cpp.o: ../mmap_io.cpp
 CMakeFiles/generator.dir/workload_generator.cpp.o: ../posix_io.cpp
+CMakeFiles/generator.dir/workload_generator.cpp.o: ../umap_io.cpp
 CMakeFiles/generator.dir/workload_generator.cpp.o: ../workload_generator.cpp
 

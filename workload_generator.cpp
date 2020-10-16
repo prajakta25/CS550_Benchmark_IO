@@ -61,6 +61,7 @@ public:
         AddStringMapVal("-client", "PosixAsync", static_cast<int>(bench::FileIOType::kPosixIO));
         AddStringMapVal("-client", "Mmap", static_cast<int>(bench::FileIOType::kmmapIO));
         AddStringMapVal("-client", "UMmap", static_cast<int>(bench::FileIOType::kUmapIO));
+        AddStringMapVal("-client", "UMmmap", static_cast<int>(bench::FileIOType::kUmmapIO));
 
         /*
             Unlike StringMap, this can take in any input.
@@ -105,7 +106,7 @@ void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn ,
 {
     
     io->Write(fn , bs, p, wcnt, rcnt);
-    io->Read(fn , bs, p, wcnt, rcnt);
+    //io->Read(fn , bs, p, wcnt, rcnt);
     //io->Stat(fn,stat);
     
     //io->AsyncWrite(fn , bs, p, wcnt, rcnt);

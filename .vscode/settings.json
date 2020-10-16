@@ -74,6 +74,9 @@
         "vector": "cpp",
         "*.tcc": "cpp",
         "memory_resource": "cpp",
-        "cinttypes": "cpp"
-    }
+        "cinttypes": "cpp",
+        "unordered_set": "cpp",
+        "map": "cpp"
+    },
+    "cmake.configureOnOpen": false
 }

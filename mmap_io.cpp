@@ -13,9 +13,6 @@
 #include <cstring>
 
 #define KB (1ul << 10)
-#define FILEPATH "/tmp/mmapped.bin"
-#define NUMINTS  (1000)
-#define FILESIZE (NUMINTS * sizeof(int))
 
 namespace bench {
 

@@ -3,12 +3,13 @@
 
 #include "posix_io.cpp"
 #include "mmap_io.cpp"
+#include "umap_io.cpp"
 
 #include <memory>
 namespace bench {
 
 enum class FileIOType {
-	kNone, kPosixIO, kUmapIO, kmmapIO
+	kNone, kPosixIO, kUmapIO, kmmapIO, kUmmapIO
 };
 
 class FileIOFactory {
@@ -20,6 +21,9 @@ class FileIOFactory {
 			}
 			case FileIOType::kmmapIO: {
 				return std::make_shared<MmapIO>();
+			}
+			case FileIOType::kUmapIO: {
+				return std::make_shared<UmapIO>();
 			}	
 
 		}
