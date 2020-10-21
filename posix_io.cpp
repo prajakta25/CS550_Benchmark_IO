@@ -22,39 +22,40 @@ namespace bench
 class PosixIO : public FileIO
 {
 public:
-    void Read(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
+    void Read(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt )
     {
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         char *rbuffer = (char *)malloc(sizeof(char) * bs);
-        int fd = open(fn.c_str(), O_SYNC | O_RDONLY, 0);
+        int fd = open(fn.c_str(),  O_RDONLY, 0);
         if (fd == -1)
         {
             std::cout << "File cannot be opened\n";
         }
-        while (read(fd, rbuffer, bs) != 0)
-            ;
+    
+        for(int i=0; i<rcnt; i++) {
+            read(fd, rbuffer, bs);
+        }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Read\t" << p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+        std::cout << "Read\t" << (bs*rcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         close(fd);
         free(rbuffer);
     }
-    void Write(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
+    void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt )
     {
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         char *wbuffer = (char *)malloc(sizeof(char) * bs);
-        int f = open(fn.c_str(), O_SYNC | O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
+        int f = open(fn.c_str(),  O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
         if (f == -1)
         {
             std::cout << "File cannot be opened\n";
         }
-        int len = p / bs;
 
         for (int i = 0; i < bs; i++)
         {
             wbuffer[i] = 'a';
         }
-        for (int i = 0; i < len; i++)
+        for (int i = 0; i < wcnt; i++)
         {
             int n=0;
             if ((n=write(f, wbuffer, bs)) == -1)
@@ -63,22 +64,22 @@ public:
                 close(f);
                 exit(2);
             }
+
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Write\t" << p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+        std::cout << "Write\t" << (bs*wcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         close(f);
         free(wbuffer);
     }
-    void AsyncRead(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt)
+    void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt)
     {
         aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-        int rec_size = p;
-        char *rbuffer = (char *)malloc(sizeof(char) * rec_size);
+        char *rbuffer = (char *)malloc(sizeof(char) * bs*rcnt);
         memset(&cb, 0, sizeof(struct aiocb));
         cb.aio_buf = rbuffer;
-        cb.aio_nbytes = p;
+        cb.aio_nbytes = bs*rcnt;
         int file = open(fn.c_str(), O_RDONLY, 0);
 
         if (file == -1)
@@ -104,27 +105,27 @@ public:
         {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "AIO Read\t" <<  p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "AIO Read\t" <<  (bs*rcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         }
         else
             std::cout << "Error!" << std::endl;
         close(file);
         free(rbuffer);
     }
-    void AsyncWrite(std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt )
+    void AsyncWrite(std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt )
     {
         struct aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-        int rec_size = p;
+        int rec_size = bs*wcnt;
         char *wbuffer = (char *)malloc(sizeof(char) * rec_size);
-        int fd = open(fn.c_str(), O_SYNC | O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
+        int fd = open(fn.c_str(),  O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
         if (fd == -1)
         {
             std::cout << "File cannot be opened\n";
         }
         //fill the buffer with  data
         memset(&cb, 0, sizeof(struct aiocb));
-        cb.aio_nbytes=p;
+        cb.aio_nbytes=rec_size;
         cb.aio_fildes = fd;
 
         for (int i = 0; i < rec_size; i++)
@@ -162,7 +163,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "AIO Write\t" << p/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+        std::cout << "AIO Write\t" << rec_size/KB/KB << "MB\t" << time_taken << "s" << std::endl;
         close(fd);
         free(wbuffer);
     }

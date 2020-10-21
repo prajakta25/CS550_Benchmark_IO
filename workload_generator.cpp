@@ -19,7 +19,6 @@ private:
     {
         AssertOptIsSet("-client");
         AssertOptIsSet("-fn");
-        AssertOptIsSet("-ps");
     }
 
 public:
@@ -33,7 +32,6 @@ public:
         std::cout << std::endl;
 
         std::cout << "-client [string]: Which I/O method to use. Posix or MMap or UMap." << std::endl;
-        std::cout << "-ps [size]: Preallocate a file of “size” bytes" << std::endl;
         std::cout << "-fn [string]: The filename to perform I/O with" << std::endl;
         std::cout << "-bs [size]: The block size for I/O requests. Each Read()/Write() will write this amount of data" << std::endl;
         std::cout << "-rcnt [int]: The number of read requests to generate" << std::endl;
@@ -60,15 +58,14 @@ public:
         AddStringMapVal("-client", "Posix", static_cast<int>(bench::FileIOType::kPosixIO));
         AddStringMapVal("-client", "PosixAsync", static_cast<int>(bench::FileIOType::kPosixIO));
         AddStringMapVal("-client", "Mmap", static_cast<int>(bench::FileIOType::kmmapIO));
-        AddStringMapVal("-client", "UMmap", static_cast<int>(bench::FileIOType::kUmapIO));
-        AddStringMapVal("-client", "UMmmap", static_cast<int>(bench::FileIOType::kUmmapIO));
+        AddStringMapVal("-client", "Umap", static_cast<int>(bench::FileIOType::kUmapIO));
+        AddStringMapVal("-client", "Ummap", static_cast<int>(bench::FileIOType::kUmmapIO));
 
         /*
             Unlike StringMap, this can take in any input.
             It has the default value of empty.
             This is a required argument and thus does not have a default value.
         */
-        AddOpt("-ps", common::args::ArgType::kSize, 4 * KB);
 
         AddOpt("-fn", common::args::ArgType::kString);
 
@@ -93,8 +90,6 @@ public:
 
         AddOpt("-stat", common::args::ArgType::kInt,0);
 
-        AddOpt("-ps", common::args::ArgType::kSize, 4 * KB);
-
         AddOpt("-h", common::args::ArgType::kNone);
 
         /*Parse and verify the arguments*/
@@ -102,15 +97,22 @@ public:
         VerifyArgs();
     }
 };
-void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t bs, size_t p, uint32_t wcnt, uint32_t rcnt, uint32_t stat)
+void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt, uint32_t stat, uint32_t pos )
 {
-    
-    io->Write(fn , bs, p, wcnt, rcnt);
-    //io->Read(fn , bs, p, wcnt, rcnt);
-    //io->Stat(fn,stat);
-    
-    //io->AsyncWrite(fn , bs, p, wcnt, rcnt);
-    //io->AsyncRead(fn , bs, p, wcnt, rcnt);
+    //Posix Operations
+    if (pos < 3 ) {
+        io->Write(fn , bs, wcnt, rcnt);
+        io->Read(fn , bs, wcnt, rcnt);
+        io->Stat(fn,stat);
+        
+        io->AsyncWrite(fn , bs, wcnt, rcnt);
+        io->AsyncRead(fn , bs, wcnt, rcnt);
+        io->Stat(fn,stat);
+    }  else if (pos > 2) { //Map operations
+        io->Write(fn , bs, wcnt, rcnt);
+        io->Read(fn , bs, wcnt, rcnt);
+        io->Stat(fn,stat);
+    }
     
 }
 
@@ -118,8 +120,8 @@ int main(int argc, char **argv)
 {
     //Get parameters
     ArgsParser args(argc, argv);
+    int pos = args.GetIntOpt("-client");
     bench::FileIOType client = static_cast<bench::FileIOType>(args.GetIntOpt("-client"));
-    size_t ps = args.GetSizeOpt("-ps");
     std::string fn = args.GetStringOpt("-fn");
     size_t bs = args.GetSizeOpt("-bs");
     int wcnt = args.GetIntOpt("-wcnt");
@@ -129,6 +131,6 @@ int main(int argc, char **argv)
     //Get I/O Client
     std::shared_ptr<bench::FileIO> io  = bench::FileIOFactory::Get(client);
     //Run the workload generator
-    file_workload_generator(io,fn,bs,ps,wcnt,rcnt,stat);
+    file_workload_generator(io,fn,bs,wcnt,rcnt,stat,pos);
     return 0;
 }
