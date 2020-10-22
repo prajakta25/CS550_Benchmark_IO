@@ -31,8 +31,12 @@ mmap_io.cpp
 /home/prajakta/CS550_Benchmark_IO/mmap_io.cpp
 umap_io.cpp
 /home/prajakta/CS550_Benchmark_IO/umap_io.cpp
+umalloc_io.cpp
+/home/prajakta/CS550_Benchmark_IO/umalloc_io.cpp
 memory
 -
+
+/home/prajakta/CS550_Benchmark_IO/include/umalloc/umalloc.h
 
 /home/prajakta/CS550_Benchmark_IO/include/umap/store/Store.hpp
 cstdint
@@ -94,6 +98,30 @@ iostream
 chrono
 -
 cstring
+-
+
+/home/prajakta/CS550_Benchmark_IO/umalloc_io.cpp
+include/umalloc/umalloc.h
+/home/prajakta/CS550_Benchmark_IO/include/umalloc/umalloc.h
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+fcntl.h
+-
+sys/mman.h
+-
+aio.h
+-
+iostream
+-
+chrono
+-
+cstring
+-
+vector
 -
 
 /home/prajakta/CS550_Benchmark_IO/umap_io.cpp

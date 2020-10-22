@@ -5,9 +5,11 @@ CMakeFiles/generator.dir/workload_generator.cpp.o
  /home/prajakta/CS550_Benchmark_IO/arguments.h
  /home/prajakta/CS550_Benchmark_IO/file_io.cpp
  /home/prajakta/CS550_Benchmark_IO/file_io_factory.cpp
+ /home/prajakta/CS550_Benchmark_IO/include/umalloc/umalloc.h
  /home/prajakta/CS550_Benchmark_IO/include/umap/store/Store.hpp
  /home/prajakta/CS550_Benchmark_IO/include/umap/umap.h
  /home/prajakta/CS550_Benchmark_IO/mmap_io.cpp
  /home/prajakta/CS550_Benchmark_IO/posix_io.cpp
+ /home/prajakta/CS550_Benchmark_IO/umalloc_io.cpp
  /home/prajakta/CS550_Benchmark_IO/umap_io.cpp
  /home/prajakta/CS550_Benchmark_IO/workload_generator.cpp

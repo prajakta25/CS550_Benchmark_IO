@@ -31,7 +31,7 @@ public:
         std::cout << "Usage: ./generator -[param] value ...";
         std::cout << std::endl;
 
-        std::cout << "-client [string]: Which I/O method to use. Posix or MMap or UMap." << std::endl;
+        std::cout << "-client [string]: Which I/O method to use. Posix or Mmap or Umap or Ummap." << std::endl;
         std::cout << "-fn [string]: The filename to perform I/O with" << std::endl;
         std::cout << "-bs [size]: The block size for I/O requests. Each Read()/Write() will write this amount of data" << std::endl;
         std::cout << "-rcnt [int]: The number of read requests to generate" << std::endl;
@@ -59,7 +59,7 @@ public:
         AddStringMapVal("-client", "PosixAsync", static_cast<int>(bench::FileIOType::kPosixIO));
         AddStringMapVal("-client", "Mmap", static_cast<int>(bench::FileIOType::kmmapIO));
         AddStringMapVal("-client", "Umap", static_cast<int>(bench::FileIOType::kUmapIO));
-        AddStringMapVal("-client", "Ummap", static_cast<int>(bench::FileIOType::kUmmapIO));
+        AddStringMapVal("-client", "Ummap", static_cast<int>(bench::FileIOType::kUmallocIO));
 
         /*
             Unlike StringMap, this can take in any input.
@@ -110,7 +110,7 @@ void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn ,
         io->Stat(fn,stat);
     }  else if (pos > 2) { //Map operations
         io->Write(fn , bs, wcnt, rcnt);
-        io->Read(fn , bs, wcnt, rcnt);
+        //io->Read(fn , bs, wcnt, rcnt);
         io->Stat(fn,stat);
     }
     

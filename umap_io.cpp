@@ -42,7 +42,7 @@ class UmapIO : public FileIO {
             }
 
             char *wbuffer = (char *)malloc(sizeof(char) * bs);
-            int fd = open(fn.c_str(), O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
+            int fd = open(fn.c_str(), O_RDWR | O_CREAT | O_TRUNC| O_DIRECT, S_IRWXU | S_IRWXG | S_IRWXO);
             if (fd == -1)
             {
                 std::cout << "File cannot be opened\n";
@@ -69,27 +69,29 @@ class UmapIO : public FileIO {
                 return;
             }
 
-            void* base_addr = umap(NULL, (bs*wcnt), PROT_READ|PROT_WRITE, UMAP_PRIVATE, fd, 0);
+            std::cout<<"1\n";
+            void* base_addr = umap(NULL, (bs*wcnt), PROT_WRITE, UMAP_PRIVATE, fd, 0);
             if ( base_addr == UMAP_FAILED ) {
                 int eno = errno;
                 std::cerr << "Failed to umap " << fn << ": " << strerror(eno) << std::endl;
                 return;
             }
-
+            std::cout<<"2\n";
             std::vector<umap_prefetch_item> pfi;
             char* base = (char*)base_addr;
             uint64_t psize =umapcfg_get_umap_page_size();
             uint64_t PagesInTest = (bs*wcnt) / psize;
-
+            std::cout<<psize<<"\n";
             std::cout << "Prefetching Pages\n";
             for ( int i{0}; i < PagesInTest; ++i) {
                 umap_prefetch_item x = { .page_base_addr = &base[i * psize] };
                 pfi.push_back(x);
             };
+            std::cout<<"3\n";
             umap_prefetch(PagesInTest, &pfi[0]);
 
-            memcpy(base, wbuffer, (bs*wcnt));
-            msync(base, (bs*wcnt), MS_SYNC);
+            memcpy(base, wbuffer, bs);
+            msync(base, bs, MS_SYNC);
 
 
             if (uunmap(base_addr, (bs*wcnt)) < 0) {
