@@ -41,7 +41,6 @@ class UmallocIO : public FileIO {
 
              for (off_t i = 0; i < wcnt; i++)
             {
-                //buf[i] = 'a';
                 memset(buf,'a',bs);
             }
              // Synchronize with storage to ensure that the latest changes are flushed
