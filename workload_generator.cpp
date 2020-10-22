@@ -110,7 +110,7 @@ void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn ,
         io->Stat(fn,stat);
     }  else if (pos > 2) { //Map operations
         io->Write(fn , bs, wcnt, rcnt);
-        //io->Read(fn , bs, wcnt, rcnt);
+        io->Read(fn , bs, wcnt, rcnt);
         io->Stat(fn,stat);
     }
     

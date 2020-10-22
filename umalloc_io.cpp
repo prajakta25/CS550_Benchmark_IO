@@ -24,12 +24,36 @@ class UmallocIO : public FileIO {
         void Read(std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt ) {
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
             
-            int fd = open(fn.c_str(), O_RDWR, S_IRWXU | S_IRWXG | S_IRWXO);
-        
+            //source file
+            char* map = (char *)umalloc(fn.c_str(),(bs*wcnt));
+            if (!(map)) { 
+                std::cout<< "Error: "<<strerror(errno)<< "error no = "<< errno<<std::endl;
+                exit(2);
+            }
+
+            //destination file
+            char* dmap = (char *)umalloc("umalloc_read.txt",(bs*rcnt));
+            if (!(dmap)) { 
+                std::cout<< "Error: "<<strerror(errno)<< "error no = "<< errno<<std::endl;
+                exit(2);
+            }
+
+            for(int i = 0; i < rcnt; ++i) {
+              memcpy(dmap , map, bs);
+              
+            }
+
+             // Synchronize with storage to ensure that the latest changes are flushed
+            usync(map);
+            usync(dmap);
+
+            // Finally, release the allocation
+            ufree(map);
+            ufree(dmap);
+
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "\nMMap Read\t" << (bs*rcnt/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
-            close(fd);
+            std::cout << "UMmap Read\t" << ((bs*rcnt)/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
         }
         void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -50,7 +74,7 @@ class UmallocIO : public FileIO {
             ufree(buf);
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "\nUMMap Write\t" << (bs*wcnt/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "\nUMmap Write\t" << (bs*wcnt/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
             
         }
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
