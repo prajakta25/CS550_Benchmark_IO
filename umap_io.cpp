@@ -108,7 +108,32 @@ class UmapIO : public FileIO {
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
         void AsyncWrite(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {  }
         void Poll () {}
-        void Stat(std::string fn, uint32_t st) {}
+        void Stat(std::string fn, uint32_t st) {
+            struct stat buf;
+            stat(fn.c_str(),&buf);
+            std::cout<<"\nStats:"<<"\n";
+            std::cout<<"ID of device containing file :"<<buf.st_dev<<"\n";
+            std::cout<<"Inode number : "<<buf.st_ino<<"\n";
+            std::cout<<"File Access :";
+            if(buf.st_mode & R_OK) {
+                std::cout<<"Read ";
+            } 
+            if(buf.st_mode & W_OK) {
+                std::cout<<"Write ";
+            }
+            if(buf.st_mode & X_OK) {
+                std::cout<<"Execute ";
+            }
+            std::cout<<"\n";
+            std::cout<<"Number of hard links : "<<buf.st_nlink<<"\n";
+            std::cout<<"User ID of owner : "<<buf.st_uid<<"\n";
+            std::cout<<"Group ID of owner : "<<buf.st_gid<<"\n";
+            std::cout<<"File Size (MB) : "<<buf.st_size/KB/KB<<"\n";
+            std::cout<<"Number of blocks allocated : "<<buf.st_blocks<<"\n";
+            std::cout<<"Time of last access : "<<ctime(&buf.st_atime);
+            std::cout<<"Time of last modification : "<<ctime(&buf.st_mtime);
+            std::cout<<"Time of last status change : "<<ctime(&buf.st_ctime)<<"\n";
+        }
 };
 
 } //namespace bench
