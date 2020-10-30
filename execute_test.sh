@@ -13,16 +13,16 @@ wcnt=(1 2 4 6 8 10)
 #List of read count to be called
 rcnt=(1 2 4 6 8 10)
 
-for ((i=0; i< ${#io[*]}; i++ ))
+for ((i=0; i< ${#buf[*]}; i++ ))
 do
-    for ((j=0; j< ${#buf[*]}; j++ ))
+    for ((j=0; j< ${#wcnt[*]}; j++ ))
     do
-      for ((k=0; k< ${#wcnt[*]}; k++ ))
+      for ((k=0; k<  ${#rcnt[*]}; k++ ))
         do  
-            for ((l=0; l< ${#rcnt[*]}; l++ ))
+            for ((l=0; l< ${#io[*]}; l++ ))
             do
-            if [ "${wcnt[$l]}" -ge "${rcnt[$k]}" ]; then
-                build/./generator -client "${io[$i]}" -fn test.txt -bs "${buf[$j]}" -wcnt " ${wcnt[$l]}" -rcnt ${rcnt[$k]} >> output.txt
+            if [ "${wcnt[$j]}" -ge "${rcnt[$k]}" ]; then
+                build/./generator -client "${io[$l]}" -fn test.txt -bs "${buf[$i]}" -wcnt " ${wcnt[$j]}" -rcnt ${rcnt[$k]} >> output.txt
                 rm test.txt
                 if [ -e "mmap_read.txt" ]; then
                    rm mmap_read.txt
