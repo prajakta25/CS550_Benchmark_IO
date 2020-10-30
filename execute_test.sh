@@ -24,8 +24,13 @@ do
             if [ "${wcnt[$l]}" -ge "${rcnt[$k]}" ]; then
                 build/./generator -client "${io[$i]}" -fn test.txt -bs "${buf[$j]}" -wcnt " ${wcnt[$l]}" -rcnt ${rcnt[$k]} >> output.txt
                 rm test.txt
-                rm mmap_read.txt
-                rm umalloc_read.txt
+                if [ -e "mmap_read.txt" ]; then
+                   rm mmap_read.txt
+                fi
+                if [ -e "umalloc_read.txt" ]; then
+                   rm umalloc_read.txt
+                fi
+                
             fi
             done
         done
