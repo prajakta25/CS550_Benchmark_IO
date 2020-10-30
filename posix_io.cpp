@@ -37,7 +37,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Read\t" << (bs*rcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+        std::cout << "Read\t\t" << (bs*rcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         close(fd);
         free(rbuffer);
     }
@@ -68,7 +68,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Write\t" << (bs*wcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+        std::cout << "Write\t\t" << (bs*wcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         close(f);
         free(wbuffer);
     }
@@ -105,7 +105,7 @@ public:
         {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "AIO Read\t" <<  (bs*rcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "AIO_Read\t\t" <<  (bs*rcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         }
         else
             std::cout << "Error!" << std::endl;
@@ -163,7 +163,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "AIO Write\t" << rec_size/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+        std::cout << "AIO_Write\t\t" << rec_size/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         close(fd);
         free(wbuffer);
     }
@@ -190,7 +190,7 @@ public:
         std::cout<<"Number of hard links : "<<buf.st_nlink<<"\n";
         std::cout<<"User ID of owner : "<<buf.st_uid<<"\n";
         std::cout<<"Group ID of owner : "<<buf.st_gid<<"\n";
-        std::cout<<"File Size (MB) : "<<buf.st_size/KB/KB<<"\n";
+        std::cout<<"File Size (KB) : "<<buf.st_size/KB<<"\n";
         std::cout<<"Number of blocks allocated : "<<buf.st_blocks<<"\n";
         std::cout<<"Time of last access : "<<ctime(&buf.st_atime);
         std::cout<<"Time of last modification : "<<ctime(&buf.st_mtime);

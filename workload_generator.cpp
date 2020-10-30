@@ -103,15 +103,21 @@ void file_workload_generator(std::shared_ptr<bench::FileIO> &io,std::string fn ,
     if (pos < 3 ) {
         io->Write(fn , bs, wcnt, rcnt);
         io->Read(fn , bs, wcnt, rcnt);
-        io->Stat(fn,stat);
-        
+        if (stat > 0 ) {
+            io->Stat(fn,stat);
+        }
+         
         io->AsyncWrite(fn , bs, wcnt, rcnt);
         io->AsyncRead(fn , bs, wcnt, rcnt);
-        io->Stat(fn,stat);
+        if (stat > 0 ) {
+            io->Stat(fn,stat);
+        }
     }  else if (pos > 2) { //Map operations
         io->Write(fn , bs, wcnt, rcnt);
         io->Read(fn , bs, wcnt, rcnt);
-        io->Stat(fn,stat);
+        if (stat > 0 ) {
+            io->Stat(fn,stat);
+        }
     }
     
 }

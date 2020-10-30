@@ -28,7 +28,7 @@ class UmapIO : public FileIO {
         
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "\nMMap Read\t" << (bs*rcnt/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "\nUMap Read\t" << (bs*rcnt/KB)<< "KB\t" << wcnt << "\t" << rcnt << "\t" << time_taken << "s" << std::endl;
             close(fd);
         }
         void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {
@@ -55,7 +55,7 @@ class UmapIO : public FileIO {
             // If we are initializing, attempt to pre-allocate disk space for the file.
             try {
                 int x;
-                if ( ( x = posix_fallocate(fd, 0, bs) != 0 ) ) {
+                if ( ( x = posix_fallocate(fd, 0, (bs*wcnt)) != 0 ) ) {
                 int eno = errno;
                 std::cerr << "Failed to pre-allocate " << fn << ": " << strerror(eno) << std::endl;
                 return;
@@ -89,9 +89,13 @@ class UmapIO : public FileIO {
             };
             std::cout<<"3\n";
             umap_prefetch(PagesInTest, &pfi[0]);
-
-            memcpy(base, wbuffer, bs);
-            msync(base, bs, MS_SYNC);
+            std::cout<<"4\n";
+            char *ptr = (char *)base_addr;
+            for(int i=0;i<wcnt;i++) {
+               memset(ptr, 'a', bs);
+            }
+           // memset(base, 'a', bs);
+            //msync(base, bs, MS_SYNC);
 
 
             if (uunmap(base_addr, (bs*wcnt)) < 0) {
@@ -102,7 +106,7 @@ class UmapIO : public FileIO {
             
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "UMap Write\t" << (bs*wcnt)/KB/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "UMap Write\t" << (bs*wcnt)/KB << "KB\t"<< wcnt << "\t" << rcnt << "\t" << time_taken << "s" << std::endl;
             close(fd);
         }
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
@@ -128,7 +132,7 @@ class UmapIO : public FileIO {
             std::cout<<"Number of hard links : "<<buf.st_nlink<<"\n";
             std::cout<<"User ID of owner : "<<buf.st_uid<<"\n";
             std::cout<<"Group ID of owner : "<<buf.st_gid<<"\n";
-            std::cout<<"File Size (MB) : "<<buf.st_size/KB/KB<<"\n";
+            std::cout<<"File Size (KB) : "<<buf.st_size/KB<<"\n";
             std::cout<<"Number of blocks allocated : "<<buf.st_blocks<<"\n";
             std::cout<<"Time of last access : "<<ctime(&buf.st_atime);
             std::cout<<"Time of last modification : "<<ctime(&buf.st_mtime);

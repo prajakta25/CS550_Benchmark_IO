@@ -53,7 +53,7 @@ class UmallocIO : public FileIO {
 
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "UMmap Read\t" << ((bs*rcnt)/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "UMmap_Read\t\t" << ((bs*rcnt)/KB) << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         }
         void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -74,7 +74,7 @@ class UmallocIO : public FileIO {
             ufree(buf);
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "\nUMmap Write\t" << (bs*wcnt/KB)/KB << "MB\t" << time_taken << "s" << std::endl;
+            std::cout << "UMmap_Write\t\t" << (bs*wcnt/KB) << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             
         }
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
@@ -100,7 +100,7 @@ class UmallocIO : public FileIO {
             std::cout<<"Number of hard links : "<<buf.st_nlink<<"\n";
             std::cout<<"User ID of owner : "<<buf.st_uid<<"\n";
             std::cout<<"Group ID of owner : "<<buf.st_gid<<"\n";
-            std::cout<<"File Size (MB) : "<<buf.st_size/KB/KB<<"\n";
+            std::cout<<"File Size (KB) : "<<buf.st_size/KB<<"\n";
             std::cout<<"Number of blocks allocated : "<<buf.st_blocks<<"\n";
             std::cout<<"Time of last access : "<<ctime(&buf.st_atime);
             std::cout<<"Time of last modification : "<<ctime(&buf.st_mtime);
