@@ -24,7 +24,7 @@ class PosixIO : public FileIO
 public:
     void Read(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt )
     {
-        std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+        double sum=0.00;
         char *rbuffer = (char *)malloc(sizeof(char) * bs);
         int fd = open(fn.c_str(),  O_RDONLY, 0);
         if (fd == -1)
@@ -33,17 +33,20 @@ public:
         }
     
         for(int i=0; i<rcnt; i++) {
+            std::chrono::steady_clock::time_point b = std::chrono::steady_clock::now();
             read(fd, rbuffer, bs);
+            std::chrono::steady_clock::time_point e = std::chrono::steady_clock::now();
+            double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(e - b).count()) / 1000000.0;
+            sum+=time_taken;
+            std::cout << "Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< wcnt << "\t\t" << i << "\t\t" << time_taken << "s" << std::endl;
         }
-        std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-        double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Read\t\t" << (bs*rcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+        std::cout << "Total_Read\t\t" << (bs*rcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << (sum/rcnt) << "s" << std::endl;
         close(fd);
         free(rbuffer);
     }
     void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt )
     {
-        std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+        double sum=0.00;
         char *wbuffer = (char *)malloc(sizeof(char) * bs);
         int f = open(fn.c_str(),  O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
         if (f == -1)
@@ -57,6 +60,7 @@ public:
         }
         for (int i = 0; i < wcnt; i++)
         {
+            std::chrono::steady_clock::time_point b = std::chrono::steady_clock::now();
             int n=0;
             if ((n=write(f, wbuffer, bs)) == -1)
             {  
@@ -64,11 +68,13 @@ public:
                 close(f);
                 exit(2);
             }
+             std::chrono::steady_clock::time_point e = std::chrono::steady_clock::now();
+            double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(e - b).count()) / 1000000.0;
+            sum+=time_taken;
+            std::cout << "Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< i << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
 
         }
-        std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-        double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "Write\t\t" << (bs*wcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+        std::cout << "Total_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << (sum/wcnt) << "s" << std::endl;
         close(f);
         free(wbuffer);
     }
@@ -105,9 +111,9 @@ public:
         {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "AIO_Read\t\t" <<  (bs*rcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "AIO_Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         }
-        else
+        else 
             std::cout << "Error!" << std::endl;
         close(file);
         free(rbuffer);
@@ -163,7 +169,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "AIO_Write\t\t" << rec_size/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+        std::cout << "AIO_Write\t\t" << rec_size/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         close(fd);
         free(wbuffer);
     }

@@ -1,937 +1,1171 @@
-I_O 		Buffer_Size_KB 		Write_Count 		Read_Count 		Time_Taken_s
-Write		1		1		1		5.1e-05s
-Read		1		1		1		4e-06s
-AIO_Write		1		1		1		0.007758s
-AIO_Read		1		1		1		3.7e-05s
-MMap_Write		1		1		1		0.008984s
-MMap_Read		1		1		1		0.000132s
-UMmap_Write		1		1		1		0.008826s
-UMmap_Read		1		1		1		0.007959s
-Write		2		2		1		6.4e-05s
-Read		1		2		1		5e-06s
-AIO_Write		2		2		1		0.014323s
-AIO_Read		1		2		1		4.5e-05s
-MMap_Write		2		2		1		0.00551s
-MMap_Read		1		2		1		0.000118s
-UMmap_Write		2		2		1		0.008578s
-UMmap_Read		1		2		1		0.006917s
-Write		2		2		2		5.2e-05s
-Read		2		2		2		5e-06s
-AIO_Write		2		2		2		0.013294s
-AIO_Read		2		2		2		4.9e-05s
-MMap_Write		2		2		2		0.007002s
-MMap_Read		2		2		2		0.000102s
-UMmap_Write		2		2		2		0.00846s
-UMmap_Read		2		2		2		0.010161s
-Write		4		4		1		5.9e-05s
-Read		1		4		1		6e-06s
-AIO_Write		4		4		1		0.02108s
-AIO_Read		1		4		1		3.5e-05s
-MMap_Write		4		4		1		0.004953s
-MMap_Read		1		4		1		8.2e-05s
-UMmap_Write		4		4		1		0.006939s
-UMmap_Read		1		4		1		0.007947s
-Write		4		4		2		5.7e-05s
-Read		2		4		2		5e-06s
-AIO_Write		4		4		2		0.013825s
-AIO_Read		2		4		2		4.4e-05s
-MMap_Write		4		4		2		0.008207s
-MMap_Read		2		4		2		0.00013s
-UMmap_Write		4		4		2		0.008435s
-UMmap_Read		2		4		2		0.009154s
-Write		4		4		4		6.8e-05s
-Read		4		4		4		7e-06s
-AIO_Write		4		4		4		0.008929s
-AIO_Read		4		4		4		6.2e-05s
-MMap_Write		4		4		4		0.006295s
-MMap_Read		4		4		4		0.000141s
-UMmap_Write		4		4		4		0.007173s
-UMmap_Read		4		4		4		0.008346s
-Write		6		6		1		9.9e-05s
-Read		1		6		1		9.2e-05s
-AIO_Write		6		6		1		0.011782s
-AIO_Read		1		6		1		3.8e-05s
-MMap_Write		6		6		1		0.004872s
-MMap_Read		1		6		1		0.000128s
-UMmap_Write		6		6		1		0.008675s
-UMmap_Read		1		6		1		0.007052s
-Write		6		6		2		7.3e-05s
-Read		2		6		2		6e-06s
-AIO_Write		6		6		2		0.00822s
-AIO_Read		2		6		2		4.9e-05s
-MMap_Write		6		6		2		0.0053s
-MMap_Read		2		6		2		8.8e-05s
-UMmap_Write		6		6		2		0.009471s
-UMmap_Read		2		6		2		0.011079s
-Write		6		6		4		6.8e-05s
-Read		4		6		4		7e-06s
-AIO_Write		6		6		4		0.007538s
-AIO_Read		4		6		4		4.9e-05s
-MMap_Write		6		6		4		0.005381s
-MMap_Read		4		6		4		9.1e-05s
-UMmap_Write		6		6		4		0.009973s
-UMmap_Read		4		6		4		0.007314s
-Write		6		6		6		8.5e-05s
-Read		6		6		6		1e-05s
-AIO_Write		6		6		6		0.012449s
-AIO_Read		6		6		6		0.002413s
-MMap_Write		6		6		6		0.005464s
-MMap_Read		6		6		6		0.00016s
-UMmap_Write		6		6		6		0.007047s
-UMmap_Read		6		6		6		0.007119s
-Write		8		8		1		8.3e-05s
-Read		1		8		1		6e-06s
-AIO_Write		8		8		1		0.010183s
-AIO_Read		1		8		1		4e-05s
-MMap_Write		8		8		1		0.004362s
-MMap_Read		1		8		1		0.000137s
-UMmap_Write		8		8		1		0.010553s
-UMmap_Read		1		8		1		0.009799s
-Write		8		8		2		0.000147s
-Read		2		8		2		6e-06s
-AIO_Write		8		8		2		0.008965s
-AIO_Read		2		8		2		3.9e-05s
-MMap_Write		8		8		2		0.005721s
-MMap_Read		2		8		2		8e-05s
-UMmap_Write		8		8		2		0.008147s
-UMmap_Read		2		8		2		0.009039s
-Write		8		8		4		6.8e-05s
-Read		4		8		4		7e-06s
-AIO_Write		8		8		4		0.010184s
-AIO_Read		4		8		4		3.8e-05s
-MMap_Write		8		8		4		0.005389s
-MMap_Read		4		8		4		0.000134s
-UMmap_Write		8		8		4		0.008556s
-UMmap_Read		4		8		4		0.008895s
-Write		8		8		6		7.1e-05s
-Read		6		8		6		8e-06s
-AIO_Write		8		8		6		0.01258s
-AIO_Read		6		8		6		5.4e-05s
-MMap_Write		8		8		6		0.005304s
-MMap_Read		6		8		6		0.000156s
-UMmap_Write		8		8		6		0.007906s
-UMmap_Read		6		8		6		0.00869s
-Write		8		8		8		6.8e-05s
-Read		8		8		8		1e-05s
-AIO_Write		8		8		8		0.009125s
-AIO_Read		8		8		8		4.1e-05s
-MMap_Write		8		8		8		0.006022s
-MMap_Read		8		8		8		0.000102s
-UMmap_Write		8		8		8		0.008881s
-UMmap_Read		8		8		8		0.007125s
-Write		10		10		1		8e-05s
-Read		1		10		1		5e-06s
-AIO_Write		10		10		1		0.007064s
-AIO_Read		1		10		1		0.019924s
-MMap_Write		10		10		1		0.006572s
-MMap_Read		1		10		1		0.000103s
-UMmap_Write		10		10		1		0.011339s
-UMmap_Read		1		10		1		0.009406s
-Write		10		10		2		9.3e-05s
-Read		2		10		2		6e-06s
-AIO_Write		10		10		2		0.009272s
-AIO_Read		2		10		2		4.9e-05s
-MMap_Write		10		10		2		0.003843s
-MMap_Read		2		10		2		0.000164s
-UMmap_Write		10		10		2		0.008759s
-UMmap_Read		2		10		2		0.009443s
-Write		10		10		4		9.2e-05s
-Read		4		10		4		8e-06s
-AIO_Write		10		10		4		0.005342s
-AIO_Read		4		10		4		4.2e-05s
-MMap_Write		10		10		4		0.004563s
-MMap_Read		4		10		4		0.000156s
-UMmap_Write		10		10		4		0.01876s
-UMmap_Read		4		10		4		0.006972s
-Write		10		10		6		7.3e-05s
-Read		6		10		6		9e-06s
-AIO_Write		10		10		6		0.011919s
-AIO_Read		6		10		6		4.5e-05s
-MMap_Write		10		10		6		0.005156s
-MMap_Read		6		10		6		0.000141s
-UMmap_Write		10		10		6		0.007198s
-UMmap_Read		6		10		6		0.007212s
-Write		10		10		8		9.2e-05s
-Read		8		10		8		1.1e-05s
-AIO_Write		10		10		8		0.006549s
-AIO_Read		8		10		8		3.9e-05s
-MMap_Write		10		10		8		0.005184s
-MMap_Read		8		10		8		0.000127s
-UMmap_Write		10		10		8		0.01253s
-UMmap_Read		8		10		8		0.00692s
-Write		10		10		10		0.000138s
-Read		10		10		10		1.2e-05s
-AIO_Write		10		10		10		0.011136s
-AIO_Read		10		10		10		4.1e-05s
-MMap_Write		10		10		10		0.00451s
-MMap_Read		10		10		10		0.000159s
-UMmap_Write		10		10		10		0.008289s
-UMmap_Read		10		10		10		0.007193s
-Write		8		1		1		8.5e-05s
-Read		8		1		1		5e-06s
-AIO_Write		8		1		1		0.006644s
-AIO_Read		8		1		1		0.008889s
-MMap_Write		8		1		1		0.005447s
-MMap_Read		8		1		1		0.000168s
-UMmap_Write		8		1		1		0.007784s
-UMmap_Read		8		1		1		0.009616s
-Write		16		2		1		9.9e-05s
-Read		8		2		1		5e-06s
-AIO_Write		16		2		1		0.01017s
-AIO_Read		8		2		1		4.3e-05s
-MMap_Write		16		2		1		0.004967s
-MMap_Read		8		2		1		0.00013s
-UMmap_Write		16		2		1		0.009626s
-UMmap_Read		8		2		1		0.011565s
-Write		16		2		2		8.6e-05s
-Read		16		2		2		6e-06s
-AIO_Write		16		2		2		0.020503s
-AIO_Read		16		2		2		3.9e-05s
-MMap_Write		16		2		2		0.004365s
-MMap_Read		16		2		2		0.000163s
-UMmap_Write		16		2		2		0.007515s
-UMmap_Read		16		2		2		0.00969s
-Write		32		4		1		0.000101s
-Read		8		4		1		6e-06s
-AIO_Write		32		4		1		0.01201s
-AIO_Read		8		4		1		6.8e-05s
-MMap_Write		32		4		1		0.007053s
-MMap_Read		8		4		1		0.000108s
-UMmap_Write		32		4		1		0.008447s
-UMmap_Read		8		4		1		0.009131s
-Write		32		4		2		0.000129s
-Read		16		4		2		9e-06s
-AIO_Write		32		4		2		0.010737s
-AIO_Read		16		4		2		5e-05s
-MMap_Write		32		4		2		0.00505s
-MMap_Read		16		4		2		0.000159s
-UMmap_Write		32		4		2		0.009523s
-UMmap_Read		16		4		2		0.007568s
-Write		32		4		4		0.000125s
-Read		32		4		4		1.8e-05s
-AIO_Write		32		4		4		0.014324s
-AIO_Read		32		4		4		4.4e-05s
-MMap_Write		32		4		4		0.00478s
-MMap_Read		32		4		4		0.000157s
-UMmap_Write		32		4		4		0.016221s
-UMmap_Read		32		4		4		0.00909s
-Write		48		6		1		0.000118s
-Read		8		6		1		6e-06s
-AIO_Write		48		6		1		0.015622s
-AIO_Read		8		6		1		4.4e-05s
-MMap_Write		48		6		1		0.005367s
-MMap_Read		8		6		1		0.000121s
-UMmap_Write		48		6		1		0.009019s
-UMmap_Read		8		6		1		0.008444s
-Write		48		6		2		0.000123s
-Read		16		6		2		6e-06s
-AIO_Write		48		6		2		0.015647s
-AIO_Read		16		6		2		5.5e-05s
-MMap_Write		48		6		2		0.005639s
-MMap_Read		16		6		2		0.000197s
-UMmap_Write		48		6		2		0.010985s
-UMmap_Read		16		6		2		0.010641s
-Write		48		6		4		0.000137s
-Read		32		6		4		1e-05s
-AIO_Write		48		6		4		0.015092s
-AIO_Read		32		6		4		5.7e-05s
-MMap_Write		48		6		4		0.004837s
-MMap_Read		32		6		4		0.000111s
-UMmap_Write		48		6		4		0.007812s
-UMmap_Read		32		6		4		0.01002s
-Write		48		6		6		0.000117s
-Read		48		6		6		1.3e-05s
-AIO_Write		48		6		6		0.011631s
-AIO_Read		48		6		6		5.9e-05s
-MMap_Write		48		6		6		0.004881s
-MMap_Read		48		6		6		0.00013s
-UMmap_Write		48		6		6		0.006701s
-UMmap_Read		48		6		6		0.008509s
-Write		64		8		1		0.000119s
-Read		8		8		1		5e-06s
-AIO_Write		64		8		1		0.019125s
-AIO_Read		8		8		1		4.6e-05s
-MMap_Write		64		8		1		0.003463s
-MMap_Read		8		8		1		0.000185s
-UMmap_Write		64		8		1		0.008218s
-UMmap_Read		8		8		1		0.008468s
-Write		64		8		2		0.00012s
-Read		16		8		2		7e-06s
-AIO_Write		64		8		2		0.007467s
-AIO_Read		16		8		2		0.005834s
-MMap_Write		64		8		2		0.006046s
-MMap_Read		16		8		2		0.00014s
-UMmap_Write		64		8		2		0.011261s
-UMmap_Read		16		8		2		0.007815s
-Write		64		8		4		0.000169s
-Read		32		8		4		1.3e-05s
-AIO_Write		64		8		4		0.004752s
-AIO_Read		32		8		4		0.008395s
-MMap_Write		64		8		4		0.006798s
-MMap_Read		32		8		4		0.000134s
-UMmap_Write		64		8		4		0.009298s
-UMmap_Read		32		8		4		0.009333s
-Write		64		8		6		0.000133s
-Read		48		8		6		1.3e-05s
-AIO_Write		64		8		6		0.007759s
-AIO_Read		48		8		6		6.3e-05s
-MMap_Write		64		8		6		0.005557s
-MMap_Read		48		8		6		0.000125s
-UMmap_Write		64		8		6		0.009029s
-UMmap_Read		48		8		6		0.008985s
-Write		64		8		8		0.000121s
-Read		64		8		8		1.5e-05s
-AIO_Write		64		8		8		0.012624s
-AIO_Read		64		8		8		0.000139s
-MMap_Write		64		8		8		0.00532s
-MMap_Read		64		8		8		0.000132s
-UMmap_Write		64		8		8		0.011081s
-UMmap_Read		64		8		8		0.012087s
-Write		80		10		1		0.000157s
-Read		8		10		1		7e-06s
-AIO_Write		80		10		1		0.012597s
-AIO_Read		8		10		1		4.6e-05s
-MMap_Write		80		10		1		0.005117s
-MMap_Read		8		10		1		0.000112s
-UMmap_Write		80		10		1		0.00652s
-UMmap_Read		8		10		1		0.010443s
-Write		80		10		2		0.000293s
-Read		16		10		2		8e-06s
-AIO_Write		80		10		2		0.013065s
-AIO_Read		16		10		2		5.7e-05s
-MMap_Write		80		10		2		0.00791s
-MMap_Read		16		10		2		0.000138s
-UMmap_Write		80		10		2		0.009704s
-UMmap_Read		16		10		2		0.009013s
-Write		80		10		4		0.000145s
-Read		32		10		4		1.1e-05s
-AIO_Write		80		10		4		0.015746s
-AIO_Read		32		10		4		6.6e-05s
-MMap_Write		80		10		4		0.007384s
-MMap_Read		32		10		4		0.00014s
-UMmap_Write		80		10		4		0.008953s
-UMmap_Read		32		10		4		0.011161s
-Write		80		10		6		0.00016s
-Read		48		10		6		1.4e-05s
-AIO_Write		80		10		6		0.010035s
-AIO_Read		48		10		6		0.000268s
-MMap_Write		80		10		6		0.005608s
-MMap_Read		48		10		6		0.000827s
-UMmap_Write		80		10		6		0.01184s
-UMmap_Read		48		10		6		0.013564s
-Write		80		10		8		0.000136s
-Read		64		10		8		1.6e-05s
-AIO_Write		80		10		8		0.006634s
-AIO_Read		64		10		8		0.007637s
-MMap_Write		80		10		8		0.007953s
-MMap_Read		64		10		8		0.00024s
-UMmap_Write		80		10		8		0.007704s
-UMmap_Read		64		10		8		0.00982s
-Write		80		10		10		0.000137s
-Read		80		10		10		1.7e-05s
-AIO_Write		80		10		10		0.017055s
-AIO_Read		80		10		10		7.5e-05s
-MMap_Write		80		10		10		0.006407s
-MMap_Read		80		10		10		0.000126s
-UMmap_Write		80		10		10		0.00857s
-UMmap_Read		80		10		10		0.008631s
-Write		64		1		1		0.000308s
-Read		64		1		1		1.1e-05s
-AIO_Write		64		1		1		0.016468s
-AIO_Read		64		1		1		8.2e-05s
-MMap_Write		64		1		1		0.005882s
-MMap_Read		64		1		1		0.000213s
-UMmap_Write		64		1		1		0.011574s
-UMmap_Read		64		1		1		0.011069s
-Write		128		2		1		0.006467s
-Read		64		2		1		2e-05s
-AIO_Write		128		2		1		0.003013s
-AIO_Read		64		2		1		0.008343s
-MMap_Write		128		2		1		0.007515s
-MMap_Read		64		2		1		0.000174s
-UMmap_Write		128		2		1		0.011042s
-UMmap_Read		64		2		1		0.012465s
-Write		128		2		2		0.002325s
-Read		128		2		2		2.6e-05s
-AIO_Write		128		2		2		0.012867s
-AIO_Read		128		2		2		0.000228s
-MMap_Write		128		2		2		0.005799s
-MMap_Read		128		2		2		0.000376s
-UMmap_Write		128		2		2		0.008135s
-UMmap_Read		128		2		2		0.009073s
-Write		256		4		1		0.000476s
-Read		64		4		1		1.2e-05s
-AIO_Write		256		4		1		0.007576s
-AIO_Read		64		4		1		0.002528s
-MMap_Write		256		4		1		0.005166s
-MMap_Read		64		4		1		0.000231s
-UMmap_Write		256		4		1		0.007961s
-UMmap_Read		64		4		1		0.00932s
-Write		256		4		2		0.000429s
-Read		128		4		2		2.2e-05s
-AIO_Write		256		4		2		0.013741s
-AIO_Read		128		4		2		0.000144s
-MMap_Write		256		4		2		0.005159s
-MMap_Read		128		4		2		0.000475s
-UMmap_Write		256		4		2		0.012206s
-UMmap_Read		128		4		2		0.008351s
-Write		256		4		4		0.000427s
-Read		256		4		4		3.8e-05s
-AIO_Write		256		4		4		0.009844s
-AIO_Read		256		4		4		0.000601s
-MMap_Write		256		4		4		0.008313s
-MMap_Read		256		4		4		0.000179s
-UMmap_Write		256		4		4		0.010695s
-UMmap_Read		256		4		4		0.009109s
-Write		384		6		1		0.000504s
-Read		64		6		1		1.3e-05s
-AIO_Write		384		6		1		0.016059s
-AIO_Read		64		6		1		0.000116s
-MMap_Write		384		6		1		0.006084s
-MMap_Read		64		6		1		0.000248s
-UMmap_Write		384		6		1		0.010761s
-UMmap_Read		64		6		1		0.009308s
-Write		384		6		2		0.000478s
-Read		128		6		2		1.7e-05s
-AIO_Write		384		6		2		0.013916s
-AIO_Read		128		6		2		0.000131s
-MMap_Write		384		6		2		0.006812s
-MMap_Read		128		6		2		0.000443s
-UMmap_Write		384		6		2		0.007205s
-UMmap_Read		128		6		2		0.012153s
-Write		384		6		4		0.000502s
-Read		256		6		4		4e-05s
-AIO_Write		384		6		4		0.017639s
-AIO_Read		256		6		4		0.000341s
-MMap_Write		384		6		4		0.006186s
-MMap_Read		256		6		4		0.000204s
-UMmap_Write		384		6		4		0.015056s
-UMmap_Read		256		6		4		0.00923s
-Write		384		6		6		0.00058s
-Read		384		6		6		0.003521s
-AIO_Write		384		6		6		0.010192s
-AIO_Read		384		6		6		0.000389s
-MMap_Write		384		6		6		0.004153s
-MMap_Read		384		6		6		0.000206s
-UMmap_Write		384		6		6		0.005631s
-UMmap_Read		384		6		6		0.009126s
-Write		512		8		1		0.000586s
-Read		64		8		1		1.4e-05s
-AIO_Write		512		8		1		0.008822s
-AIO_Read		64		8		1		0.019032s
-MMap_Write		512		8		1		0.007989s
-MMap_Read		64		8		1		0.000261s
-UMmap_Write		512		8		1		0.007302s
-UMmap_Read		64		8		1		0.011196s
-Write		512		8		2		0.000571s
-Read		128		8		2		2.3e-05s
-AIO_Write		512		8		2		0.01385s
-AIO_Read		128		8		2		0.009188s
-MMap_Write		512		8		2		0.006207s
-MMap_Read		128		8		2		0.000214s
-UMmap_Write		512		8		2		0.007744s
-UMmap_Read		128		8		2		0.011523s
-Write		512		8		4		0.000587s
-Read		256		8		4		5.1e-05s
-AIO_Write		512		8		4		0.015131s
-AIO_Read		256		8		4		0.000313s
-MMap_Write		512		8		4		0.007359s
-MMap_Read		256		8		4		0.000199s
-UMmap_Write		512		8		4		0.007097s
-UMmap_Read		256		8		4		0.011636s
-Write		512		8		6		0.002728s
-Read		384		8		6		8.6e-05s
-AIO_Write		512		8		6		0.016352s
-AIO_Read		384		8		6		0.000432s
-MMap_Write		512		8		6		0.007317s
-MMap_Read		384		8		6		0.00019s
-UMmap_Write		512		8		6		0.013147s
-UMmap_Read		384		8		6		0.009094s
-Write		512		8		8		0.000646s
-Read		512		8		8		7.5e-05s
-AIO_Write		512		8		8		0.014542s
-AIO_Read		512		8		8		0.000662s
-MMap_Write		512		8		8		0.006343s
-MMap_Read		512		8		8		0.000837s
-UMmap_Write		512		8		8		0.01296s
-UMmap_Read		512		8		8		0.011994s
-Write		640		10		1		0.000638s
-Read		64		10		1		1.2e-05s
-AIO_Write		640		10		1		0.011255s
-AIO_Read		64		10		1		0.000108s
-MMap_Write		640		10		1		0.004616s
-MMap_Read		64		10		1		0.000177s
-UMmap_Write		640		10		1		0.010488s
-UMmap_Read		64		10		1		0.009688s
-Write		640		10		2		0.000686s
-Read		128		10		2		2.6e-05s
-AIO_Write		640		10		2		0.025253s
-AIO_Read		128		10		2		0.000159s
-MMap_Write		640		10		2		0.007354s
-MMap_Read		128		10		2		0.000265s
-UMmap_Write		640		10		2		0.008713s
-UMmap_Read		128		10		2		0.009275s
-Write		640		10		4		0.000699s
-Read		256		10		4		4.2e-05s
-AIO_Write		640		10		4		0.012863s
-AIO_Read		256		10		4		0.00021s
-MMap_Write		640		10		4		0.009179s
-MMap_Read		256		10		4		0.00018s
-UMmap_Write		640		10		4		0.008017s
-UMmap_Read		256		10		4		0.009439s
-Write		640		10		6		0.000648s
-Read		384		10		6		5.2e-05s
-AIO_Write		640		10		6		0.019943s
-AIO_Read		384		10		6		0.000378s
-MMap_Write		640		10		6		0.008323s
-MMap_Read		384		10		6		0.000274s
-UMmap_Write		640		10		6		0.010243s
-UMmap_Read		384		10		6		0.008523s
-Write		640		10		8		0.003848s
-Read		512		10		8		8.1e-05s
-AIO_Write		640		10		8		0.014677s
-AIO_Read		512		10		8		0.000688s
-MMap_Write		640		10		8		0.004756s
-MMap_Read		512		10		8		0.000209s
-UMmap_Write		640		10		8		0.011932s
-UMmap_Read		512		10		8		0.009963s
-Write		640		10		10		0.00469s
-Read		640		10		10		9.8e-05s
-AIO_Write		640		10		10		0.0077s
-AIO_Read		640		10		10		0.008578s
-MMap_Write		640		10		10		0.005977s
-MMap_Read		640		10		10		0.000213s
-UMmap_Write		640		10		10		0.015506s
-UMmap_Read		640		10		10		0.008598s
-Write		1024		1		1		0.009272s
-Read		1024		1		1		0.003711s
-AIO_Write		1024		1		1		0.021906s
-AIO_Read		1024		1		1		0.00047s
-MMap_Write		1024		1		1		0.017698s
-MMap_Read		1024		1		1		0.00138s
-UMmap_Write		1024		1		1		0.009338s
-UMmap_Read		1024		1		1		0.010046s
-Write		2048		2		1		0.010431s
-Read		1024		2		1		0.00049s
-AIO_Write		2048		2		1		0.040063s
-AIO_Read		1024		2		1		0.000495s
-MMap_Write		2048		2		1		0.01832s
-MMap_Read		1024		2		1		0.001668s
-UMmap_Write		2048		2		1		0.010912s
-UMmap_Read		1024		2		1		0.011572s
-Write		2048		2		2		0.011759s
-Read		2048		2		2		0.000707s
-AIO_Write		2048		2		2		0.040451s
-AIO_Read		2048		2		2		0.002206s
-MMap_Write		2048		2		2		0.019595s
-MMap_Read		2048		2		2		0.001916s
-UMmap_Write		2048		2		2		0.008987s
-UMmap_Read		2048		2		2		0.010228s
-Write		4096		4		1		0.008512s
-Read		1024		4		1		0.000476s
-AIO_Write		4096		4		1		0.062112s
-AIO_Read		1024		4		1		0.021886s
-MMap_Write		4096		4		1		0.021832s
-MMap_Read		1024		4		1		0.001357s
-UMmap_Write		4096		4		1		0.010001s
-UMmap_Read		1024		4		1		0.010414s
-Write		4096		4		2		0.005922s
-Read		2048		4		2		0.000593s
-AIO_Write		4096		4		2		0.053348s
-AIO_Read		2048		4		2		0.001106s
-MMap_Write		4096		4		2		0.01942s
-MMap_Read		2048		4		2		0.001672s
-UMmap_Write		4096		4		2		0.018323s
-UMmap_Read		2048		4		2		0.009498s
-Write		4096		4		4		0.013957s
-Read		4096		4		4		0.001048s
-AIO_Write		4096		4		4		0.044507s
-AIO_Read		4096		4		4		0.008803s
-MMap_Write		4096		4		4		0.023468s
-MMap_Read		4096		4		4		0.002174s
-UMmap_Write		4096		4		4		0.009293s
-UMmap_Read		4096		4		4		0.010483s
-Write		6144		6		1		0.017704s
-Read		1024		6		1		0.000459s
-AIO_Write		6144		6		1		0.074593s
-AIO_Read		1024		6		1		0.000337s
-MMap_Write		6144		6		1		0.020187s
-MMap_Read		1024		6		1		0.001396s
-UMmap_Write		6144		6		1		0.010904s
-UMmap_Read		1024		6		1		0.011831s
-Write		6144		6		2		0.01634s
-Read		2048		6		2		0.000727s
-AIO_Write		6144		6		2		0.085162s
-AIO_Read		2048		6		2		0.021952s
-MMap_Write		6144		6		2		0.026446s
-MMap_Read		2048		6		2		0.001883s
-UMmap_Write		6144		6		2		0.011286s
-UMmap_Read		2048		6		2		0.014348s
-Write		6144		6		4		0.017301s
-Read		4096		6		4		0.001422s
-AIO_Write		6144		6		4		0.084697s
-AIO_Read		4096		6		4		0.020166s
-MMap_Write		6144		6		4		0.025211s
-MMap_Read		4096		6		4		0.002726s
-UMmap_Write		6144		6		4		0.01362s
-UMmap_Read		4096		6		4		0.012605s
-Write		6144		6		6		0.015492s
-Read		6144		6		6		0.009838s
-AIO_Write		6144		6		6		0.074046s
-AIO_Read		6144		6		6		0.011991s
-MMap_Write		6144		6		6		0.023358s
-MMap_Read		6144		6		6		0.002368s
-UMmap_Write		6144		6		6		0.009189s
-UMmap_Read		6144		6		6		0.012355s
-Write		8192		8		1		0.008205s
-Read		1024		8		1		0.004403s
-AIO_Write		8192		8		1		0.083455s
-AIO_Read		1024		8		1		0.002721s
-MMap_Write		8192		8		1		0.026765s
-MMap_Read		1024		8		1		0.001527s
-UMmap_Write		8192		8		1		0.010452s
-UMmap_Read		1024		8		1		0.010624s
-Write		8192		8		2		0.014438s
-Read		2048		8		2		0.000667s
-AIO_Write		8192		8		2		0.100005s
-AIO_Read		2048		8		2		0.001243s
-MMap_Write		8192		8		2		0.026865s
-MMap_Read		2048		8		2		0.001584s
-UMmap_Write		8192		8		2		0.01176s
-UMmap_Read		2048		8		2		0.011979s
-Write		8192		8		4		0.015866s
-Read		4096		8		4		0.001051s
-AIO_Write		8192		8		4		0.100091s
-AIO_Read		4096		8		4		0.006799s
-MMap_Write		8192		8		4		0.023669s
-MMap_Read		4096		8		4		0.001695s
-UMmap_Write		8192		8		4		0.019429s
-UMmap_Read		4096		8		4		0.012192s
-Write		8192		8		6		0.023713s
-Read		6144		8		6		0.001488s
-AIO_Write		8192		8		6		0.082446s
-AIO_Read		6144		8		6		0.007413s
-MMap_Write		8192		8		6		0.025121s
-MMap_Read		6144		8		6		0.002613s
-UMmap_Write		8192		8		6		0.009062s
-UMmap_Read		6144		8		6		0.011928s
-Write		8192		8		8		0.020509s
-Read		8192		8		8		0.001901s
-AIO_Write		8192		8		8		0.106413s
-AIO_Read		8192		8		8		0.010763s
-MMap_Write		8192		8		8		0.026903s
-MMap_Read		8192		8		8		0.002208s
-UMmap_Write		8192		8		8		0.01012s
-UMmap_Read		8192		8		8		0.013404s
-Write		10240		10		1		0.019121s
-Read		1024		10		1		0.00576s
-AIO_Write		10240		10		1		0.116392s
-AIO_Read		1024		10		1		0.000346s
-MMap_Write		10240		10		1		0.029221s
-MMap_Read		1024		10		1		0.002234s
-UMmap_Write		10240		10		1		0.010611s
-UMmap_Read		1024		10		1		0.009913s
-Write		10240		10		2		0.016685s
-Read		2048		10		2		0.00066s
-AIO_Write		10240		10		2		0.091831s
-AIO_Read		2048		10		2		0.001167s
-MMap_Write		10240		10		2		0.025428s
-MMap_Read		2048		10		2		0.00206s
-UMmap_Write		10240		10		2		0.018448s
-UMmap_Read		2048		10		2		0.012162s
-Write		10240		10		4		0.01392s
-Read		4096		10		4		0.001005s
-AIO_Write		10240		10		4		0.101524s
-AIO_Read		4096		10		4		0.00193s
-MMap_Write		10240		10		4		0.020528s
-MMap_Read		4096		10		4		0.002344s
-UMmap_Write		10240		10		4		0.010593s
-UMmap_Read		4096		10		4		0.009612s
-Write		10240		10		6		0.009773s
-Read		6144		10		6		0.0114s
-AIO_Write		10240		10		6		0.108878s
-AIO_Read		6144		10		6		0.005612s
-MMap_Write		10240		10		6		0.021204s
-MMap_Read		6144		10		6		0.002803s
-UMmap_Write		10240		10		6		0.013366s
-UMmap_Read		6144		10		6		0.009594s
-Write		10240		10		8		0.022043s
-Read		8192		10		8		0.00222s
-AIO_Write		10240		10		8		0.120804s
-AIO_Read		8192		10		8		0.023746s
-MMap_Write		10240		10		8		0.020028s
-MMap_Read		8192		10		8		0.005297s
-UMmap_Write		10240		10		8		0.011648s
-UMmap_Read		8192		10		8		0.011267s
-Write		10240		10		10		0.02221s
-Read		10240		10		10		0.002551s
-AIO_Write		10240		10		10		0.11376s
-AIO_Read		10240		10		10		0.013244s
-MMap_Write		10240		10		10		0.019545s
-MMap_Read		10240		10		10		0.002499s
-UMmap_Write		10240		10		10		0.00825s
-UMmap_Read		10240		10		10		0.012175s
-Write		8192		1		1		0.071452s
-Read		8192		1		1		0.004484s
-AIO_Write		8192		1		1		0.085154s
-AIO_Read		8192		1		1		0.018619s
-MMap_Write		8192		1		1		0.111858s
-MMap_Read		8192		1		1		0.017854s
-UMmap_Write		8192		1		1		0.061697s
-UMmap_Read		8192		1		1		0.067737s
-Write		16384		2		1		0.078498s
-Read		8192		2		1		0.0075s
-AIO_Write		16384		2		1		0.161163s
-AIO_Read		8192		2		1		0.02536s
-MMap_Write		16384		2		1		0.106399s
-MMap_Read		8192		2		1		0.015461s
-UMmap_Write		16384		2		1		0.057896s
-UMmap_Read		8192		2		1		0.06606s
-Write		16384		2		2		0.076646s
-Read		16384		2		2		0.026939s
-AIO_Write		16384		2		2		0.174419s
-AIO_Read		16384		2		2		0.03584s
-MMap_Write		16384		2		2		0.128645s
-MMap_Read		16384		2		2		0.01738s
-UMmap_Write		16384		2		2		0.058563s
-UMmap_Read		16384		2		2		0.06006s
-Write		32768		4		1		0.101146s
-Read		8192		4		1		0.014487s
-AIO_Write		32768		4		1		0.356618s
-AIO_Read		8192		4		1		0.010761s
-MMap_Write		32768		4		1		0.121068s
-MMap_Read		8192		4		1		0.016946s
-UMmap_Write		32768		4		1		0.055251s
-UMmap_Read		8192		4		1		0.064679s
-Write		32768		4		2		0.098047s
-Read		16384		4		2		0.017552s
-AIO_Write		32768		4		2		0.279091s
-AIO_Read		16384		4		2		0.036786s
-MMap_Write		32768		4		2		0.12383s
-MMap_Read		16384		4		2		0.020533s
-UMmap_Write		32768		4		2		0.068037s
-UMmap_Read		16384		4		2		0.070728s
-Write		32768		4		4		0.097512s
-Read		32768		4		4		0.021732s
-AIO_Write		32768		4		4		0.244742s
-AIO_Read		32768		4		4		0.082989s
-MMap_Write		32768		4		4		0.130327s
-MMap_Read		32768		4		4		0.01723s
-UMmap_Write		32768		4		4		0.064879s
-UMmap_Read		32768		4		4		0.072446s
-Write		49152		6		1		0.137038s
-Read		8192		6		1		0.008133s
-AIO_Write		49152		6		1		0.351395s
-AIO_Read		8192		6		1		0.007555s
-MMap_Write		49152		6		1		0.141028s
-MMap_Read		8192		6		1		0.015166s
-UMmap_Write		49152		6		1		0.071625s
-UMmap_Read		8192		6		1		0.073036s
-Write		49152		6		2		0.147869s
-Read		16384		6		2		0.020024s
-AIO_Write		49152		6		2		0.555199s
-AIO_Read		16384		6		2		0.019957s
-MMap_Write		49152		6		2		0.121112s
-MMap_Read		16384		6		2		0.019792s
-UMmap_Write		49152		6		2		0.077842s
-UMmap_Read		16384		6		2		0.058749s
-Write		49152		6		4		0.121973s
-Read		32768		6		4		0.022881s
-AIO_Write		49152		6		4		0.533421s
-AIO_Read		32768		6		4		0.070476s
-MMap_Write		49152		6		4		0.132301s
-MMap_Read		32768		6		4		0.025682s
-UMmap_Write		49152		6		4		0.065439s
-UMmap_Read		32768		6		4		0.077222s
-Write		49152		6		6		0.143269s
-Read		49152		6		6		0.032213s
-AIO_Write		49152		6		6		0.524888s
-AIO_Read		49152		6		6		0.085333s
-MMap_Write		49152		6		6		0.138206s
-MMap_Read		49152		6		6		0.027495s
-UMmap_Write		49152		6		6		0.058251s
-UMmap_Read		49152		6		6		0.081016s
-Write		65536		8		1		0.149823s
-Read		8192		8		1		0.014493s
-AIO_Write		65536		8		1		0.377883s
-AIO_Read		8192		8		1		0.00865s
-MMap_Write		65536		8		1		0.090739s
-MMap_Read		8192		8		1		0.013493s
-UMmap_Write		65536		8		1		0.060123s
-UMmap_Read		8192		8		1		0.052172s
-Write		65536		8		2		0.108393s
-Read		16384		8		2		0.009696s
-AIO_Write		65536		8		2		0.373025s
-AIO_Read		16384		8		2		0.036592s
-MMap_Write		65536		8		2		0.12922s
-MMap_Read		16384		8		2		0.014741s
-UMmap_Write		65536		8		2		0.069383s
-UMmap_Read		16384		8		2		0.069409s
-Write		65536		8		4		0.149085s
-Read		32768		8		4		0.021517s
-AIO_Write		65536		8		4		0.504741s
-AIO_Read		32768		8		4		0.048233s
-MMap_Write		65536		8		4		0.090806s
-MMap_Read		32768		8		4		0.0178s
-UMmap_Write		65536		8		4		0.069615s
-UMmap_Read		32768		8		4		0.054466s
-Write		65536		8		6		0.113944s
-Read		49152		8		6		0.018071s
-AIO_Write		65536		8		6		0.396677s
-AIO_Read		49152		8		6		0.046583s
-MMap_Write		65536		8		6		0.088355s
-MMap_Read		49152		8		6		0.020051s
-UMmap_Write		65536		8		6		0.06009s
-UMmap_Read		49152		8		6		0.080813s
-Write		65536		8		8		0.106852s
-Read		65536		8		8		0.029098s
-AIO_Write		65536		8		8		0.39459s
-AIO_Read		65536		8		8		0.060382s
-MMap_Write		65536		8		8		0.097975s
-MMap_Read		65536		8		8		0.021197s
-UMmap_Write		65536		8		8		0.059923s
-UMmap_Read		65536		8		8		0.078974s
-Write		81920		10		1		0.128452s
-Read		8192		10		1		0.007918s
-MMap_Write		81920		10		1		0.097409s
-MMap_Read		8192		10		1		0.014066s
-UMmap_Write		81920		10		1		0.053566s
-UMmap_Read		8192		10		1		0.055163s
-Write		81920		10		2		0.123256s
-Read		16384		10		2		0.010605s
-MMap_Write		81920		10		2		0.086729s
-MMap_Read		16384		10		2		0.013824s
-UMmap_Write		81920		10		2		0.054561s
-UMmap_Read		16384		10		2		0.062841s
-Write		81920		10		4		0.124366s
-Read		32768		10		4		0.013921s
-MMap_Write		81920		10		4		0.089987s
-MMap_Read		32768		10		4		0.017445s
-UMmap_Write		81920		10		4		0.052925s
-UMmap_Read		32768		10		4		0.062157s
-Write		81920		10		6		0.121163s
-Read		49152		10		6		0.017511s
-MMap_Write		81920		10		6		0.093138s
-MMap_Read		49152		10		6		0.020679s
-UMmap_Write		81920		10		6		0.058168s
-UMmap_Read		49152		10		6		0.054769s
-Write		81920		10		8		0.126732s
-Read		65536		10		8		0.022225s
-MMap_Write		81920		10		8		0.097674s
-MMap_Read		65536		10		8		0.021967s
-UMmap_Write		81920		10		8		0.070058s
-UMmap_Read		65536		10		8		0.064364s
-Write		81920		10		10		0.123924s
-Read		81920		10		10		0.029521s
-MMap_Write		81920		10		10		0.098133s
-MMap_Read		81920		10		10		0.023035s
-UMmap_Write		81920		10		10		0.055742s
-UMmap_Read		81920		10		10		0.076566s
-Write		16384		1		1		0.084309s
-Read		16384		1		1		0.01205s
-AIO_Write		16384		1		1		0.099984s
-AIO_Read		16384		1		1		0.030122s
-MMap_Write		16384		1		1		0.168045s
-MMap_Read		16384		1		1		0.032155s
-UMmap_Write		16384		1		1		0.099974s
-UMmap_Read		16384		1		1		0.114457s
-Write		32768		2		1		0.118324s
-Read		16384		2		1		0.012938s
-AIO_Write		32768		2		1		0.209204s
-AIO_Read		16384		2		1		0.013539s
-MMap_Write		32768		2		1		0.196331s
-MMap_Read		16384		2		1		0.032107s
-UMmap_Write		32768		2		1		0.085065s
-UMmap_Read		16384		2		1		0.089273s
-Write		32768		2		2		0.097814s
-Read		32768		2		2		0.017872s
-AIO_Write		32768		2		2		0.188346s
-AIO_Read		32768		2		2		0.068387s
-MMap_Write		32768		2		2		0.216545s
-MMap_Read		32768		2		2		0.025523s
-UMmap_Write		32768		2		2		0.09118s
-UMmap_Read		32768		2		2		0.097279s
-Write		65536		4		1		0.124251s
-Read		16384		4		1		0.008765s
-AIO_Write		65536		4		1		0.450328s
-AIO_Read		16384		4		1		0.003255s
-MMap_Write		65536		4		1		0.153565s
-MMap_Read		16384		4		1		0.021191s
-UMmap_Write		65536		4		1		0.091746s
-UMmap_Read		16384		4		1		0.085561s
-Write		65536		4		2		0.126932s
-Read		32768		4		2		0.016815s
-AIO_Write		65536		4		2		0.341332s
-AIO_Read		32768		4		2		0.044262s
-MMap_Write		65536		4		2		0.146819s
-MMap_Read		32768		4		2		0.025834s
-UMmap_Write		65536		4		2		0.082031s
-UMmap_Read		32768		4		2		0.098594s
-Write		65536		4		4		0.121641s
-Read		65536		4		4		0.024656s
-AIO_Write		65536		4		4		0.363895s
-AIO_Read		65536		4		4		0.06562s
-MMap_Write		65536		4		4		0.143168s
-MMap_Read		65536		4		4		0.030072s
-UMmap_Write		65536		4		4		0.092463s
-UMmap_Read		65536		4		4		0.102153s
-MMap_Write		98304		6		1		0.15453s
-MMap_Read		16384		6		1		0.024073s
-UMmap_Write		98304		6		1		0.118398s
-UMmap_Read		16384		6		1		0.114652s
-MMap_Write		98304		6		2		0.158422s
-MMap_Read		32768		6		2		0.027134s
-UMmap_Write		98304		6		2		0.099328s
-UMmap_Read		32768		6		2		0.112781s
-MMap_Write		98304		6		4		0.169994s
-MMap_Read		65536		6		4		0.048356s
-UMmap_Write		98304		6		4		0.085153s
-UMmap_Read		65536		6		4		0.092907s
-MMap_Write		98304		6		6		0.210275s
-MMap_Read		98304		6		6		0.032745s
-UMmap_Write		98304		6		6		0.111834s
-UMmap_Read		98304		6		6		0.141383s
-MMap_Write		131072		8		1		0.166441s
-MMap_Read		16384		8		1		0.038082s
-UMmap_Write		131072		8		1		0.107581s
-UMmap_Read		16384		8		1		0.110696s
-MMap_Write		131072		8		2		0.26248s
-MMap_Read		32768		8		2		0.040091s
-UMmap_Write		131072		8		2		0.126973s
-UMmap_Read		32768		8		2		0.116504s
-MMap_Write		131072		8		4		0.153569s
-MMap_Read		65536		8		4		0.029607s
-UMmap_Write		131072		8		4		0.114435s
-UMmap_Read		65536		8		4		0.126051s
-MMap_Write		131072		8		6		0.23973s
-MMap_Read		98304		8		6		0.0431s
-UMmap_Write		131072		8		6		0.096531s
-UMmap_Read		98304		8		6		0.129815s
-MMap_Write		131072		8		8		0.150249s
-MMap_Read		131072		8		8		0.037358s
-UMmap_Write		131072		8		8		0.096022s
-UMmap_Read		131072		8		8		0.13433s
-MMap_Write		163840		10		1		0.199802s
-MMap_Read		16384		10		1		0.034083s
-UMmap_Write		163840		10		1		0.130794s
-UMmap_Read		16384		10		1		0.110064s
-MMap_Write		163840		10		2		0.161061s
-MMap_Read		32768		10		2		0.038512s
-UMmap_Write		163840		10		2		0.113792s
-UMmap_Read		32768		10		2		0.115187s
-MMap_Write		163840		10		4		0.1753s
-MMap_Read		65536		10		4		0.049078s
-UMmap_Write		163840		10		4		0.106171s
-UMmap_Read		65536		10		4		0.123628s
-MMap_Write		163840		10		6		0.20945s
-MMap_Read		98304		10		6		0.051334s
-UMmap_Write		163840		10		6		0.129349s
-UMmap_Read		98304		10		6		0.134939s
-MMap_Write		163840		10		8		0.159775s
-MMap_Read		131072		10		8		0.038333s
-UMmap_Write		163840		10		8		0.13071s
-UMmap_Read		131072		10		8		0.135467s
-MMap_Write		163840		10		10		0.177122s
-MMap_Read		163840		10		10		0.071234s
-UMmap_Write		163840		10		10		0.145635s
-UMmap_Read		163840		10		10		0.132187s
+I_O 		File_Size_KB		Buffer_size_KB 		Write_Count 		Read_Count 		Time_Taken_s
+Write		1k		1k		0		1		1.8e-05s
+Total_Write		1k		1k		1		1		1.8e-05s
+Read		1k		1k		1		0		1e-06s
+Total_Read		1k		1k		1		1		1e-06s
+AIO_Write		1k		1k		1		1		0.019385s
+AIO_Read		1k		1k		1		1		4.4e-05s
+MMap_Write		1k		1k		1		1		0.00675s
+MMap_Read		1k		1k		1		1		7.5e-05s
+UMmap_Write		1k		1k		1		1		0.011291s
+UMmap_Read		1k		1k		1		1		0.010953s
+Write		4k		1k		0		1		1.8e-05s
+Write		4k		1k		1		1		2e-06s
+Write		4k		1k		2		1		1e-06s
+Write		4k		1k		3		1		1e-06s
+Total_Write		4k		1k		4		1		5.5e-06s
+Read		4k		1k		4		0		1e-06s
+Total_Read		1k		1k		4		1		1e-06s
+AIO_Write		4k		1k		4		1		0.007526s
+AIO_Read		4k		1k		4		1		5.5e-05s
+MMap_Write		4k		1k		4		1		0.007751s
+MMap_Read		4k		1k		4		1		7.5e-05s
+UMmap_Write		4k		1k		4		1		0.010603s
+UMmap_Read		4k		1k		4		1		0.008591s
+Write		4k		1k		0		4		1.7e-05s
+Write		4k		1k		1		4		2e-06s
+Write		4k		1k		2		4		1e-06s
+Write		4k		1k		3		4		1e-06s
+Total_Write		4k		1k		4		4		5.25e-06s
+Read		4k		1k		4		0		1e-06s
+Read		4k		1k		4		1		0s
+Read		4k		1k		4		2		0s
+Read		4k		1k		4		3		0s
+Total_Read		4k		1k		4		4		2.5e-07s
+AIO_Write		4k		1k		4		4		0.010978s
+AIO_Read		4k		1k		4		4		3.7e-05s
+MMap_Write		4k		1k		4		4		0.004447s
+MMap_Read		4k		1k		4		4		8.1e-05s
+UMmap_Write		4k		1k		4		4		0.007821s
+UMmap_Read		4k		1k		4		4		0.010047s
+Write		8k		1k		0		1		1.7e-05s
+Write		8k		1k		1		1		2e-06s
+Write		8k		1k		2		1		1e-06s
+Write		8k		1k		3		1		1e-06s
+Write		8k		1k		4		1		6e-06s
+Write		8k		1k		5		1		2e-06s
+Write		8k		1k		6		1		1e-06s
+Write		8k		1k		7		1		1e-06s
+Total_Write		8k		1k		8		1		3.875e-06s
+Read		8k		1k		8		0		1e-06s
+Total_Read		1k		1k		8		1		1e-06s
+AIO_Write		8k		1k		8		1		0.009198s
+AIO_Read		8k		1k		8		1		4.3e-05s
+MMap_Write		8k		1k		8		1		0.005553s
+MMap_Read		8k		1k		8		1		9.3e-05s
+UMmap_Write		8k		1k		8		1		0.008854s
+UMmap_Read		8k		1k		8		1		0.006461s
+Write		8k		1k		0		4		1.9e-05s
+Write		8k		1k		1		4		2e-06s
+Write		8k		1k		2		4		1e-06s
+Write		8k		1k		3		4		1e-06s
+Write		8k		1k		4		4		6e-06s
+Write		8k		1k		5		4		1e-06s
+Write		8k		1k		6		4		1e-06s
+Write		8k		1k		7		4		1e-06s
+Total_Write		8k		1k		8		4		4e-06s
+Read		8k		1k		8		0		1e-06s
+Read		8k		1k		8		1		0s
+Read		8k		1k		8		2		0s
+Read		8k		1k		8		3		0s
+Total_Read		4k		1k		8		4		2.5e-07s
+AIO_Write		8k		1k		8		4		0.015335s
+AIO_Read		8k		1k		8		4		5.1e-05s
+MMap_Write		8k		1k		8		4		0.008674s
+MMap_Read		8k		1k		8		4		8.1e-05s
+UMmap_Write		8k		1k		8		4		0.007852s
+UMmap_Read		8k		1k		8		4		0.007764s
+Write		8k		1k		0		8		1.7e-05s
+Write		8k		1k		1		8		2e-06s
+Write		8k		1k		2		8		1e-06s
+Write		8k		1k		3		8		1e-06s
+Write		8k		1k		4		8		6e-06s
+Write		8k		1k		5		8		1e-06s
+Write		8k		1k		6		8		1e-06s
+Write		8k		1k		7		8		1e-06s
+Total_Write		8k		1k		8		8		3.75e-06s
+Read		8k		1k		8		0		1e-06s
+Read		8k		1k		8		1		0s
+Read		8k		1k		8		2		0s
+Read		8k		1k		8		3		0s
+Read		8k		1k		8		4		0s
+Read		8k		1k		8		5		0s
+Read		8k		1k		8		6		0s
+Read		8k		1k		8		7		0s
+Total_Read		8k		1k		8		8		1.25e-07s
+AIO_Write		8k		1k		8		8		0.009537s
+AIO_Read		8k		1k		8		8		4.1e-05s
+MMap_Write		8k		1k		8		8		0.006493s
+MMap_Read		8k		1k		8		8		0.000105s
+UMmap_Write		8k		1k		8		8		0.007692s
+UMmap_Read		8k		1k		8		8		0.008424s
+Write		10k		1k		0		1		1.9e-05s
+Write		10k		1k		1		1		2e-06s
+Write		10k		1k		2		1		1e-06s
+Write		10k		1k		3		1		1e-06s
+Write		10k		1k		4		1		6e-06s
+Write		10k		1k		5		1		1e-06s
+Write		10k		1k		6		1		1e-06s
+Write		10k		1k		7		1		1e-06s
+Write		10k		1k		8		1		3e-06s
+Write		10k		1k		9		1		1e-06s
+Total_Write		10k		1k		10		1		3.6e-06s
+Read		10k		1k		10		0		2e-06s
+Total_Read		1k		1k		10		1		2e-06s
+AIO_Write		10k		1k		10		1		0.016731s
+AIO_Read		10k		1k		10		1		8.6e-05s
+MMap_Write		10k		1k		10		1		0.009354s
+MMap_Read		10k		1k		10		1		0.000106s
+UMmap_Write		10k		1k		10		1		0.010238s
+UMmap_Read		10k		1k		10		1		0.007371s
+Write		10k		1k		0		4		1.8e-05s
+Write		10k		1k		1		4		2e-06s
+Write		10k		1k		2		4		1e-06s
+Write		10k		1k		3		4		1e-06s
+Write		10k		1k		4		4		6e-06s
+Write		10k		1k		5		4		1e-06s
+Write		10k		1k		6		4		1e-06s
+Write		10k		1k		7		4		1e-06s
+Write		10k		1k		8		4		5e-06s
+Write		10k		1k		9		4		1e-06s
+Total_Write		10k		1k		10		4		3.7e-06s
+Read		10k		1k		10		0		1e-06s
+Read		10k		1k		10		1		0s
+Read		10k		1k		10		2		0s
+Read		10k		1k		10		3		0s
+Total_Read		4k		1k		10		4		2.5e-07s
+AIO_Write		10k		1k		10		4		0.015117s
+AIO_Read		10k		1k		10		4		3.7e-05s
+MMap_Write		10k		1k		10		4		0.00301s
+MMap_Read		10k		1k		10		4		0.000144s
+UMmap_Write		10k		1k		10		4		0.008261s
+UMmap_Read		10k		1k		10		4		0.007946s
+Write		10k		1k		0		8		1.6e-05s
+Write		10k		1k		1		8		2e-06s
+Write		10k		1k		2		8		1e-06s
+Write		10k		1k		3		8		1e-06s
+Write		10k		1k		4		8		5e-06s
+Write		10k		1k		5		8		1e-06s
+Write		10k		1k		6		8		1e-06s
+Write		10k		1k		7		8		1e-06s
+Write		10k		1k		8		8		5e-06s
+Write		10k		1k		9		8		1e-06s
+Total_Write		10k		1k		10		8		3.4e-06s
+Read		10k		1k		10		0		1e-06s
+Read		10k		1k		10		1		0s
+Read		10k		1k		10		2		0s
+Read		10k		1k		10		3		0s
+Read		10k		1k		10		4		0s
+Read		10k		1k		10		5		0s
+Read		10k		1k		10		6		0s
+Read		10k		1k		10		7		0s
+Total_Read		8k		1k		10		8		1.25e-07s
+AIO_Write		10k		1k		10		8		0.012563s
+AIO_Read		10k		1k		10		8		4.4e-05s
+MMap_Write		10k		1k		10		8		0.004891s
+MMap_Read		10k		1k		10		8		8.2e-05s
+UMmap_Write		10k		1k		10		8		0.008803s
+UMmap_Read		10k		1k		10		8		0.007084s
+Write		10k		1k		0		10		2e-05s
+Write		10k		1k		1		10		2e-06s
+Write		10k		1k		2		10		2e-06s
+Write		10k		1k		3		10		2e-06s
+Write		10k		1k		4		10		7e-06s
+Write		10k		1k		5		10		2e-06s
+Write		10k		1k		6		10		2e-06s
+Write		10k		1k		7		10		2e-06s
+Write		10k		1k		8		10		6e-06s
+Write		10k		1k		9		10		2e-06s
+Total_Write		10k		1k		10		10		4.7e-06s
+Read		10k		1k		10		0		2e-06s
+Read		10k		1k		10		1		1e-06s
+Read		10k		1k		10		2		0s
+Read		10k		1k		10		3		0s
+Read		10k		1k		10		4		0s
+Read		10k		1k		10		5		0s
+Read		10k		1k		10		6		0s
+Read		10k		1k		10		7		0s
+Read		10k		1k		10		8		1e-06s
+Read		10k		1k		10		9		1e-06s
+Total_Read		10k		1k		10		10		5e-07s
+AIO_Write		10k		1k		10		10		0.015942s
+AIO_Read		10k		1k		10		10		3.8e-05s
+MMap_Write		10k		1k		10		10		0.007204s
+MMap_Read		10k		1k		10		10		0.000102s
+UMmap_Write		10k		1k		10		10		0.008868s
+UMmap_Read		10k		1k		10		10		0.007856s
+Write		8k		8k		0		1		2.2e-05s
+Total_Write		8k		8k		1		1		2.2e-05s
+Read		8k		8k		1		0		2e-06s
+Total_Read		8k		8k		1		1		2e-06s
+AIO_Write		8k		8k		1		1		0.007886s
+AIO_Read		8k		8k		1		1		3.8e-05s
+MMap_Write		8k		8k		1		1		0.005279s
+MMap_Read		8k		8k		1		1		0.000543s
+UMmap_Write		8k		8k		1		1		0.009423s
+UMmap_Read		8k		8k		1		1		0.010319s
+Write		32k		8k		0		1		2.2e-05s
+Write		32k		8k		1		1		6e-06s
+Write		32k		8k		2		1		5e-06s
+Write		32k		8k		3		1		5e-06s
+Total_Write		32k		8k		4		1		9.5e-06s
+Read		32k		8k		4		0		2e-06s
+Total_Read		8k		8k		4		1		2e-06s
+AIO_Write		32k		8k		4		1		0.006666s
+AIO_Read		32k		8k		4		1		4.3e-05s
+MMap_Write		32k		8k		4		1		0.005462s
+MMap_Read		32k		8k		4		1		0.0001s
+UMmap_Write		32k		8k		4		1		0.007379s
+UMmap_Read		32k		8k		4		1		0.007372s
+Write		32k		8k		0		4		2.2e-05s
+Write		32k		8k		1		4		6e-06s
+Write		32k		8k		2		4		5e-06s
+Write		32k		8k		3		4		6e-06s
+Total_Write		32k		8k		4		4		9.75e-06s
+Read		32k		8k		4		0		2e-06s
+Read		32k		8k		4		1		1e-06s
+Read		32k		8k		4		2		1e-06s
+Read		32k		8k		4		3		1e-06s
+Total_Read		32k		8k		4		4		1.25e-06s
+AIO_Write		32k		8k		4		4		0.011468s
+AIO_Read		32k		8k		4		4		5e-05s
+MMap_Write		32k		8k		4		4		0.009381s
+MMap_Read		32k		8k		4		4		9.8e-05s
+UMmap_Write		32k		8k		4		4		0.007917s
+UMmap_Read		32k		8k		4		4		0.007284s
+Write		64k		8k		0		1		2.4e-05s
+Write		64k		8k		1		1		6e-06s
+Write		64k		8k		2		1		5e-06s
+Write		64k		8k		3		1		5e-06s
+Write		64k		8k		4		1		5e-06s
+Write		64k		8k		5		1		5e-06s
+Write		64k		8k		6		1		5e-06s
+Write		64k		8k		7		1		6e-06s
+Total_Write		64k		8k		8		1		7.625e-06s
+Read		64k		8k		8		0		2e-06s
+Total_Read		8k		8k		8		1		2e-06s
+AIO_Write		64k		8k		8		1		0.012038s
+AIO_Read		64k		8k		8		1		4.2e-05s
+MMap_Write		64k		8k		8		1		0.005005s
+MMap_Read		64k		8k		8		1		0.000123s
+UMmap_Write		64k		8k		8		1		0.011114s
+UMmap_Read		64k		8k		8		1		0.006677s
+Write		64k		8k		0		4		2.6e-05s
+Write		64k		8k		1		4		7e-06s
+Write		64k		8k		2		4		5e-06s
+Write		64k		8k		3		4		6e-06s
+Write		64k		8k		4		4		5e-06s
+Write		64k		8k		5		4		5e-06s
+Write		64k		8k		6		4		6e-06s
+Write		64k		8k		7		4		6e-06s
+Total_Write		64k		8k		8		4		8.25e-06s
+Read		64k		8k		8		0		2e-06s
+Read		64k		8k		8		1		1e-06s
+Read		64k		8k		8		2		1e-06s
+Read		64k		8k		8		3		1e-06s
+Total_Read		32k		8k		8		4		1.25e-06s
+AIO_Write		64k		8k		8		4		0.014694s
+AIO_Read		64k		8k		8		4		4.7e-05s
+MMap_Write		64k		8k		8		4		0.00666s
+MMap_Read		64k		8k		8		4		0.000107s
+UMmap_Write		64k		8k		8		4		0.008014s
+UMmap_Read		64k		8k		8		4		0.007143s
+Write		64k		8k		0		8		2.2e-05s
+Write		64k		8k		1		8		8e-06s
+Write		64k		8k		2		8		5e-06s
+Write		64k		8k		3		8		5e-06s
+Write		64k		8k		4		8		5e-06s
+Write		64k		8k		5		8		5e-06s
+Write		64k		8k		6		8		5e-06s
+Write		64k		8k		7		8		6e-06s
+Total_Write		64k		8k		8		8		7.625e-06s
+Read		64k		8k		8		0		2e-06s
+Read		64k		8k		8		1		1e-06s
+Read		64k		8k		8		2		1e-06s
+Read		64k		8k		8		3		1e-06s
+Read		64k		8k		8		4		1e-06s
+Read		64k		8k		8		5		1e-06s
+Read		64k		8k		8		6		1e-06s
+Read		64k		8k		8		7		1e-06s
+Total_Read		64k		8k		8		8		1.125e-06s
+AIO_Write		64k		8k		8		8		0.011812s
+AIO_Read		64k		8k		8		8		6.5e-05s
+MMap_Write		64k		8k		8		8		0.005244s
+MMap_Read		64k		8k		8		8		0.00011s
+UMmap_Write		64k		8k		8		8		0.01163s
+UMmap_Read		64k		8k		8		8		0.009384s
+Write		80k		8k		0		1		2.3e-05s
+Write		80k		8k		1		1		7e-06s
+Write		80k		8k		2		1		6e-06s
+Write		80k		8k		3		1		6e-06s
+Write		80k		8k		4		1		6e-06s
+Write		80k		8k		5		1		5e-06s
+Write		80k		8k		6		1		5e-06s
+Write		80k		8k		7		1		7e-06s
+Write		80k		8k		8		1		5e-06s
+Write		80k		8k		9		1		5e-06s
+Total_Write		80k		8k		10		1		7.5e-06s
+Read		80k		8k		10		0		2e-06s
+Total_Read		8k		8k		10		1		2e-06s
+AIO_Write		80k		8k		10		1		0.013138s
+AIO_Read		80k		8k		10		1		3.6e-05s
+MMap_Write		80k		8k		10		1		0.005475s
+MMap_Read		80k		8k		10		1		0.00012s
+UMmap_Write		80k		8k		10		1		0.009294s
+UMmap_Read		80k		8k		10		1		0.007704s
+Write		80k		8k		0		4		2.2e-05s
+Write		80k		8k		1		4		7e-06s
+Write		80k		8k		2		4		5e-06s
+Write		80k		8k		3		4		6e-06s
+Write		80k		8k		4		4		5e-06s
+Write		80k		8k		5		4		5e-06s
+Write		80k		8k		6		4		5e-06s
+Write		80k		8k		7		4		6e-06s
+Write		80k		8k		8		4		5e-06s
+Write		80k		8k		9		4		5e-06s
+Total_Write		80k		8k		10		4		7.1e-06s
+Read		80k		8k		10		0		2e-06s
+Read		80k		8k		10		1		1e-06s
+Read		80k		8k		10		2		1e-06s
+Read		80k		8k		10		3		1e-06s
+Total_Read		32k		8k		10		4		1.25e-06s
+AIO_Write		80k		8k		10		4		0.017104s
+AIO_Read		80k		8k		10		4		4.5e-05s
+MMap_Write		80k		8k		10		4		0.006434s
+MMap_Read		80k		8k		10		4		0.000115s
+UMmap_Write		80k		8k		10		4		0.007581s
+UMmap_Read		80k		8k		10		4		0.007018s
+Write		80k		8k		0		8		2.3e-05s
+Write		80k		8k		1		8		6e-06s
+Write		80k		8k		2		8		5e-06s
+Write		80k		8k		3		8		5e-06s
+Write		80k		8k		4		8		5e-06s
+Write		80k		8k		5		8		5e-06s
+Write		80k		8k		6		8		5e-06s
+Write		80k		8k		7		8		6e-06s
+Write		80k		8k		8		8		5e-06s
+Write		80k		8k		9		8		5e-06s
+Total_Write		80k		8k		10		8		7e-06s
+Read		80k		8k		10		0		2e-06s
+Read		80k		8k		10		1		1e-06s
+Read		80k		8k		10		2		1e-06s
+Read		80k		8k		10		3		1e-06s
+Read		80k		8k		10		4		1e-06s
+Read		80k		8k		10		5		1e-06s
+Read		80k		8k		10		6		1e-06s
+Read		80k		8k		10		7		1e-06s
+Total_Read		64k		8k		10		8		1.125e-06s
+AIO_Write		80k		8k		10		8		0.014242s
+AIO_Read		80k		8k		10		8		4.8e-05s
+MMap_Write		80k		8k		10		8		0.005409s
+MMap_Read		80k		8k		10		8		0.000122s
+UMmap_Write		80k		8k		10		8		0.011337s
+UMmap_Read		80k		8k		10		8		0.008913s
+Write		80k		8k		0		10		2.8e-05s
+Write		80k		8k		1		10		7e-06s
+Write		80k		8k		2		10		5e-06s
+Write		80k		8k		3		10		5e-06s
+Write		80k		8k		4		10		5e-06s
+Write		80k		8k		5		10		5e-06s
+Write		80k		8k		6		10		5e-06s
+Write		80k		8k		7		10		6e-06s
+Write		80k		8k		8		10		5e-06s
+Write		80k		8k		9		10		5e-06s
+Total_Write		80k		8k		10		10		7.6e-06s
+Read		80k		8k		10		0		2e-06s
+Read		80k		8k		10		1		1e-06s
+Read		80k		8k		10		2		1e-06s
+Read		80k		8k		10		3		1e-06s
+Read		80k		8k		10		4		1e-06s
+Read		80k		8k		10		5		1e-06s
+Read		80k		8k		10		6		1e-06s
+Read		80k		8k		10		7		1e-06s
+Read		80k		8k		10		8		1e-06s
+Read		80k		8k		10		9		1e-06s
+Total_Read		80k		8k		10		10		1.1e-06s
+AIO_Write		80k		8k		10		10		0.015576s
+AIO_Read		80k		8k		10		10		5.5e-05s
+MMap_Write		80k		8k		10		10		0.002875s
+MMap_Read		80k		8k		10		10		0.000115s
+UMmap_Write		80k		8k		10		10		0.007234s
+UMmap_Read		80k		8k		10		10		0.009902s
+Write		64k		64k		0		1		5.4e-05s
+Total_Write		64k		64k		1		1		5.4e-05s
+Read		64k		64k		1		0		9e-06s
+Total_Read		64k		64k		1		1		9e-06s
+AIO_Write		64k		64k		1		1		0.012198s
+AIO_Read		64k		64k		1		1		4.8e-05s
+MMap_Write		64k		64k		1		1		0.006879s
+MMap_Read		64k		64k		1		1		0.00017s
+UMmap_Write		64k		64k		1		1		0.010377s
+UMmap_Read		64k		64k		1		1		0.008548s
+Write		256k		64k		0		1		5e-05s
+Write		256k		64k		1		1		3.5e-05s
+Write		256k		64k		2		1		3.5e-05s
+Write		256k		64k		3		1		3.3e-05s
+Total_Write		256k		64k		4		1		3.825e-05s
+Read		256k		64k		4		0		6e-06s
+Total_Read		64k		64k		4		1		6e-06s
+AIO_Write		256k		64k		4		1		0.010865s
+AIO_Read		256k		64k		4		1		0.001436s
+MMap_Write		256k		64k		4		1		0.007796s
+MMap_Read		256k		64k		4		1		0.000273s
+UMmap_Write		256k		64k		4		1		0.012256s
+UMmap_Read		256k		64k		4		1		0.009341s
+Write		256k		64k		0		4		5.1e-05s
+Write		256k		64k		1		4		3.6e-05s
+Write		256k		64k		2		4		3.5e-05s
+Write		256k		64k		3		4		3.3e-05s
+Total_Write		256k		64k		4		4		3.875e-05s
+Read		256k		64k		4		0		7e-06s
+Read		256k		64k		4		1		5e-06s
+Read		256k		64k		4		2		5e-06s
+Read		256k		64k		4		3		5e-06s
+Total_Read		256k		64k		4		4		5.5e-06s
+AIO_Write		256k		64k		4		4		0.014562s
+AIO_Read		256k		64k		4		4		0.000373s
+MMap_Write		256k		64k		4		4		0.006579s
+MMap_Read		256k		64k		4		4		0.000232s
+UMmap_Write		256k		64k		4		4		0.009077s
+UMmap_Read		256k		64k		4		4		0.008304s
+Write		512k		64k		0		1		5.1e-05s
+Write		512k		64k		1		1		3.6e-05s
+Write		512k		64k		2		1		3.5e-05s
+Write		512k		64k		3		1		3.4e-05s
+Write		512k		64k		4		1		3.5e-05s
+Write		512k		64k		5		1		3.4e-05s
+Write		512k		64k		6		1		3.3e-05s
+Write		512k		64k		7		1		3.3e-05s
+Total_Write		512k		64k		8		1		3.6375e-05s
+Read		512k		64k		8		0		7e-06s
+Total_Read		64k		64k		8		1		7e-06s
+AIO_Write		512k		64k		8		1		0.020479s
+AIO_Read		512k		64k		8		1		9.4e-05s
+MMap_Write		512k		64k		8		1		0.010511s
+MMap_Read		512k		64k		8		1		0.000168s
+UMmap_Write		512k		64k		8		1		0.010432s
+UMmap_Read		512k		64k		8		1		0.007701s
+Write		512k		64k		0		4		5.1e-05s
+Write		512k		64k		1		4		3.4e-05s
+Write		512k		64k		2		4		3.4e-05s
+Write		512k		64k		3		4		3.2e-05s
+Write		512k		64k		4		4		3.4e-05s
+Write		512k		64k		5		4		3.4e-05s
+Write		512k		64k		6		4		3.3e-05s
+Write		512k		64k		7		4		3.3e-05s
+Total_Write		512k		64k		8		4		3.5625e-05s
+Read		512k		64k		8		0		7e-06s
+Read		512k		64k		8		1		6e-06s
+Read		512k		64k		8		2		5e-06s
+Read		512k		64k		8		3		5e-06s
+Total_Read		256k		64k		8		4		5.75e-06s
+AIO_Write		512k		64k		8		4		0.022027s
+AIO_Read		512k		64k		8		4		0.000295s
+MMap_Write		512k		64k		8		4		0.010039s
+MMap_Read		512k		64k		8		4		0.0002s
+UMmap_Write		512k		64k		8		4		0.00819s
+UMmap_Read		512k		64k		8		4		0.010785s
+Write		512k		64k		0		8		5e-05s
+Write		512k		64k		1		8		3.6e-05s
+Write		512k		64k		2		8		3.6e-05s
+Write		512k		64k		3		8		3.4e-05s
+Write		512k		64k		4		8		3.5e-05s
+Write		512k		64k		5		8		3.3e-05s
+Write		512k		64k		6		8		3.3e-05s
+Write		512k		64k		7		8		3.3e-05s
+Total_Write		512k		64k		8		8		3.625e-05s
+Read		512k		64k		8		0		3e-05s
+Read		512k		64k		8		1		1e-05s
+Read		512k		64k		8		2		1e-05s
+Read		512k		64k		8		3		9e-06s
+Read		512k		64k		8		4		9e-06s
+Read		512k		64k		8		5		9e-06s
+Read		512k		64k		8		6		9e-06s
+Read		512k		64k		8		7		1e-05s
+Total_Read		512k		64k		8		8		1.2e-05s
+AIO_Write		512k		64k		8		8		0.014134s
+AIO_Read		512k		64k		8		8		0.003372s
+MMap_Write		512k		64k		8		8		0.013813s
+MMap_Read		512k		64k		8		8		0.000336s
+UMmap_Write		512k		64k		8		8		0.009755s
+UMmap_Read		512k		64k		8		8		0.009072s
+Write		640k		64k		0		1		5.3e-05s
+Write		640k		64k		1		1		3.6e-05s
+Write		640k		64k		2		1		3.5e-05s
+Write		640k		64k		3		1		3.3e-05s
+Write		640k		64k		4		1		3.4e-05s
+Write		640k		64k		5		1		3.4e-05s
+Write		640k		64k		6		1		3.4e-05s
+Write		640k		64k		7		1		3.4e-05s
+Write		640k		64k		8		1		3.5e-05s
+Write		640k		64k		9		1		3.3e-05s
+Total_Write		640k		64k		10		1		3.61e-05s
+Read		640k		64k		10		0		7e-06s
+Total_Read		64k		64k		10		1		7e-06s
+AIO_Write		640k		64k		10		1		0.013165s
+AIO_Read		640k		64k		10		1		9.8e-05s
+MMap_Write		640k		64k		10		1		0.007128s
+MMap_Read		640k		64k		10		1		0.000173s
+UMmap_Write		640k		64k		10		1		0.008772s
+UMmap_Read		640k		64k		10		1		0.008674s
+Write		640k		64k		0		4		5.2e-05s
+Write		640k		64k		1		4		3.7e-05s
+Write		640k		64k		2		4		3.5e-05s
+Write		640k		64k		3		4		3.4e-05s
+Write		640k		64k		4		4		3.7e-05s
+Write		640k		64k		5		4		3.5e-05s
+Write		640k		64k		6		4		3.3e-05s
+Write		640k		64k		7		4		0.00012s
+Write		640k		64k		8		4		3.6e-05s
+Write		640k		64k		9		4		3.4e-05s
+Total_Write		640k		64k		10		4		4.53e-05s
+Read		640k		64k		10		0		7e-06s
+Read		640k		64k		10		1		8e-06s
+Read		640k		64k		10		2		8e-06s
+Read		640k		64k		10		3		8e-06s
+Total_Read		256k		64k		10		4		7.75e-06s
+AIO_Write		640k		64k		10		4		0.010944s
+AIO_Read		640k		64k		10		4		0.0002s
+MMap_Write		640k		64k		10		4		0.009894s
+MMap_Read		640k		64k		10		4		0.000175s
+UMmap_Write		640k		64k		10		4		0.008696s
+UMmap_Read		640k		64k		10		4		0.007666s
+Write		640k		64k		0		8		5.1e-05s
+Write		640k		64k		1		8		3.5e-05s
+Write		640k		64k		2		8		3.4e-05s
+Write		640k		64k		3		8		3.3e-05s
+Write		640k		64k		4		8		3.5e-05s
+Write		640k		64k		5		8		3.3e-05s
+Write		640k		64k		6		8		3.3e-05s
+Write		640k		64k		7		8		3.4e-05s
+Write		640k		64k		8		8		3.3e-05s
+Write		640k		64k		9		8		3.3e-05s
+Total_Write		640k		64k		10		8		3.54e-05s
+Read		640k		64k		10		0		8e-06s
+Read		640k		64k		10		1		7e-06s
+Read		640k		64k		10		2		6e-06s
+Read		640k		64k		10		3		6e-06s
+Read		640k		64k		10		4		6e-06s
+Read		640k		64k		10		5		6e-06s
+Read		640k		64k		10		6		6e-06s
+Read		640k		64k		10		7		6e-06s
+Total_Read		512k		64k		10		8		6.375e-06s
+AIO_Write		640k		64k		10		8		0.017674s
+AIO_Read		640k		64k		10		8		0.000337s
+MMap_Write		640k		64k		10		8		0.006604s
+MMap_Read		640k		64k		10		8		0.000222s
+UMmap_Write		640k		64k		10		8		0.009049s
+UMmap_Read		640k		64k		10		8		0.00719s
+Write		640k		64k		0		10		5e-05s
+Write		640k		64k		1		10		3.6e-05s
+Write		640k		64k		2		10		3.5e-05s
+Write		640k		64k		3		10		3.4e-05s
+Write		640k		64k		4		10		5.4e-05s
+Write		640k		64k		5		10		0.004208s
+Write		640k		64k		6		10		4e-05s
+Write		640k		64k		7		10		3.4e-05s
+Write		640k		64k		8		10		3.7e-05s
+Write		640k		64k		9		10		3.3e-05s
+Total_Write		640k		64k		10		10		0.0004561s
+Read		640k		64k		10		0		1.2e-05s
+Read		640k		64k		10		1		1e-05s
+Read		640k		64k		10		2		9e-06s
+Read		640k		64k		10		3		1e-05s
+Read		640k		64k		10		4		9e-06s
+Read		640k		64k		10		5		9e-06s
+Read		640k		64k		10		6		7e-06s
+Read		640k		64k		10		7		7e-06s
+Read		640k		64k		10		8		7e-06s
+Read		640k		64k		10		9		7e-06s
+Total_Read		640k		64k		10		10		8.7e-06s
+AIO_Write		640k		64k		10		10		0.013692s
+AIO_Read		640k		64k		10		10		0.001953s
+MMap_Write		640k		64k		10		10		0.005819s
+MMap_Read		640k		64k		10		10		0.000231s
+UMmap_Write		640k		64k		10		10		0.007733s
+UMmap_Read		640k		64k		10		10		0.007146s
+Write		1024k		1024k		0		1		0.000636s
+Total_Write		1024k		1024k		1		1		0.000636s
+Read		1024k		1024k		1		0		0.000422s
+Total_Read		1024k		1024k		1		1		0.000422s
+AIO_Write		1024k		1024k		1		1		0.019031s
+AIO_Read		1024k		1024k		1		1		0.000396s
+MMap_Write		1024k		1024k		1		1		0.018634s
+MMap_Read		1024k		1024k		1		1		0.002393s
+UMmap_Write		1024k		1024k		1		1		0.015637s
+UMmap_Read		1024k		1024k		1		1		0.007725s
+Write		4096k		1024k		0		1		0.000608s
+Write		4096k		1024k		1		1		0.000552s
+Write		4096k		1024k		2		1		0.000549s
+Write		4096k		1024k		3		1		0.000534s
+Total_Write		4096k		1024k		4		1		0.00056075s
+Read		4096k		1024k		4		0		0.00043s
+Total_Read		1024k		1024k		4		1		0.00043s
+AIO_Write		4096k		1024k		4		1		0.033765s
+AIO_Read		4096k		1024k		4		1		0.000335s
+MMap_Write		4096k		1024k		4		1		0.022891s
+MMap_Read		4096k		1024k		4		1		0.002266s
+UMmap_Write		4096k		1024k		4		1		0.011515s
+UMmap_Read		4096k		1024k		4		1		0.008123s
+Write		4096k		1024k		0		4		0.00062s
+Write		4096k		1024k		1		4		0.000579s
+Write		4096k		1024k		2		4		0.003997s
+Write		4096k		1024k		3		4		0.001623s
+Total_Write		4096k		1024k		4		4		0.00170475s
+Read		4096k		1024k		4		0		0.000486s
+Read		4096k		1024k		4		1		0.000167s
+Read		4096k		1024k		4		2		0.000141s
+Read		4096k		1024k		4		3		0.000136s
+Total_Read		4096k		1024k		4		4		0.0002325s
+AIO_Write		4096k		1024k		4		4		0.031011s
+AIO_Read		4096k		1024k		4		4		0.00478s
+MMap_Write		4096k		1024k		4		4		0.016763s
+MMap_Read		4096k		1024k		4		4		0.001366s
+UMmap_Write		4096k		1024k		4		4		0.011467s
+UMmap_Read		4096k		1024k		4		4		0.007459s
+Write		8192k		1024k		0		1		0.001841s
+Write		8192k		1024k		1		1		0.001628s
+Write		8192k		1024k		2		1		0.000598s
+Write		8192k		1024k		3		1		0.00055s
+Write		8192k		1024k		4		1		0.000546s
+Write		8192k		1024k		5		1		0.000539s
+Write		8192k		1024k		6		1		0.000538s
+Write		8192k		1024k		7		1		0.003788s
+Total_Write		8192k		1024k		8		1		0.0012535s
+Read		8192k		1024k		8		0		0.000486s
+Total_Read		1024k		1024k		8		1		0.000486s
+AIO_Write		8192k		1024k		8		1		0.047527s
+AIO_Read		8192k		1024k		8		1		0.000301s
+MMap_Write		8192k		1024k		8		1		0.01978s
+MMap_Read		8192k		1024k		8		1		0.001146s
+UMmap_Write		8192k		1024k		8		1		0.009914s
+UMmap_Read		8192k		1024k		8		1		0.009683s
+Write		8192k		1024k		0		4		0.000644s
+Write		8192k		1024k		1		4		0.009711s
+Write		8192k		1024k		2		4		0.000614s
+Write		8192k		1024k		3		4		0.000563s
+Write		8192k		1024k		4		4		0.000545s
+Write		8192k		1024k		5		4		0.001886s
+Write		8192k		1024k		6		4		0.000546s
+Write		8192k		1024k		7		4		0.000543s
+Total_Write		8192k		1024k		8		4		0.0018815s
+Read		8192k		1024k		8		0		0.000452s
+Read		8192k		1024k		8		1		0.000163s
+Read		8192k		1024k		8		2		0.000141s
+Read		8192k		1024k		8		3		0.000135s
+Total_Read		4096k		1024k		8		4		0.00022275s
+AIO_Write		8192k		1024k		8		4		0.094274s
+AIO_Read		8192k		1024k		8		4		0.014657s
+MMap_Write		8192k		1024k		8		4		0.016572s
+MMap_Read		8192k		1024k		8		4		0.002671s
+UMmap_Write		8192k		1024k		8		4		0.01113s
+UMmap_Read		8192k		1024k		8		4		0.013361s
+Write		8192k		1024k		0		8		0.001699s
+Write		8192k		1024k		1		8		0.000634s
+Write		8192k		1024k		2		8		0.000565s
+Write		8192k		1024k		3		8		0.000543s
+Write		8192k		1024k		4		8		0.000546s
+Write		8192k		1024k		5		8		0.00055s
+Write		8192k		1024k		6		8		0.003684s
+Write		8192k		1024k		7		8		0.000644s
+Total_Write		8192k		1024k		8		8		0.00110813s
+Read		8192k		1024k		8		0		0.000466s
+Read		8192k		1024k		8		1		0.000199s
+Read		8192k		1024k		8		2		0.000149s
+Read		8192k		1024k		8		3		0.00014s
+Read		8192k		1024k		8		4		0.000137s
+Read		8192k		1024k		8		5		0.00015s
+Read		8192k		1024k		8		6		0.00014s
+Read		8192k		1024k		8		7		0.000138s
+Total_Read		8192k		1024k		8		8		0.000189875s
+AIO_Write		8192k		1024k		8		8		0.059348s
+AIO_Read		8192k		1024k		8		8		0.020742s
+MMap_Write		8192k		1024k		8		8		0.016676s
+MMap_Read		8192k		1024k		8		8		0.004541s
+UMmap_Write		8192k		1024k		8		8		0.010096s
+UMmap_Read		8192k		1024k		8		8		0.008521s
+Write		10240k		1024k		0		1		0.000656s
+Write		10240k		1024k		1		1		0.000588s
+Write		10240k		1024k		2		1		0.000589s
+Write		10240k		1024k		3		1		0.005498s
+Write		10240k		1024k		4		1		0.000638s
+Write		10240k		1024k		5		1		0.000557s
+Write		10240k		1024k		6		1		0.00055s
+Write		10240k		1024k		7		1		0.000548s
+Write		10240k		1024k		8		1		0.00301s
+Write		10240k		1024k		9		1		0.000597s
+Total_Write		10240k		1024k		10		1		0.0013231s
+Read		10240k		1024k		10		0		0.000472s
+Total_Read		1024k		1024k		10		1		0.000472s
+AIO_Write		10240k		1024k		10		1		0.071556s
+AIO_Read		10240k		1024k		10		1		0.001802s
+MMap_Write		10240k		1024k		10		1		0.025796s
+MMap_Read		10240k		1024k		10		1		0.001076s
+UMmap_Write		10240k		1024k		10		1		0.009249s
+UMmap_Read		10240k		1024k		10		1		0.008677s
+Write		10240k		1024k		0		4		0.000677s
+Write		10240k		1024k		1		4		0.000589s
+Write		10240k		1024k		2		4		0.000549s
+Write		10240k		1024k		3		4		0.004168s
+Write		10240k		1024k		4		4		0.000571s
+Write		10240k		1024k		5		4		0.000552s
+Write		10240k		1024k		6		4		0.000542s
+Write		10240k		1024k		7		4		0.000541s
+Write		10240k		1024k		8		4		0.00054s
+Write		10240k		1024k		9		4		0.00491s
+Total_Write		10240k		1024k		10		4		0.0013639s
+Read		10240k		1024k		10		0		0.000489s
+Read		10240k		1024k		10		1		0.000171s
+Read		10240k		1024k		10		2		0.000142s
+Read		10240k		1024k		10		3		0.000138s
+Total_Read		4096k		1024k		10		4		0.000235s
+AIO_Write		10240k		1024k		10		4		0.057662s
+AIO_Read		10240k		1024k		10		4		0.010424s
+MMap_Write		10240k		1024k		10		4		0.023316s
+MMap_Read		10240k		1024k		10		4		0.004033s
+UMmap_Write		10240k		1024k		10		4		0.011588s
+UMmap_Read		10240k		1024k		10		4		0.01444s
+Write		10240k		1024k		0		8		0.001902s
+Write		10240k		1024k		1		8		0.001857s
+Write		10240k		1024k		2		8		0.000669s
+Write		10240k		1024k		3		8		0.000617s
+Write		10240k		1024k		4		8		0.000559s
+Write		10240k		1024k		5		8		0.000553s
+Write		10240k		1024k		6		8		0.004305s
+Write		10240k		1024k		7		8		0.000592s
+Write		10240k		1024k		8		8		0.000555s
+Write		10240k		1024k		9		8		0.000543s
+Total_Write		10240k		1024k		10		8		0.0012152s
+Read		10240k		1024k		10		0		0.000454s
+Read		10240k		1024k		10		1		0.000164s
+Read		10240k		1024k		10		2		0.000147s
+Read		10240k		1024k		10		3		0.000138s
+Read		10240k		1024k		10		4		0.000149s
+Read		10240k		1024k		10		5		0.00014s
+Read		10240k		1024k		10		6		0.000143s
+Read		10240k		1024k		10		7		0.000138s
+Total_Read		8192k		1024k		10		8		0.000184125s
+AIO_Write		10240k		1024k		10		8		0.075627s
+AIO_Read		10240k		1024k		10		8		0.030493s
+MMap_Write		10240k		1024k		10		8		0.024235s
+MMap_Read		10240k		1024k		10		8		0.001815s
+UMmap_Write		10240k		1024k		10		8		0.007214s
+UMmap_Read		10240k		1024k		10		8		0.00957s
+Write		10240k		1024k		0		10		0.000671s
+Write		10240k		1024k		1		10		0.000569s
+Write		10240k		1024k		2		10		0.000794s
+Write		10240k		1024k		3		10		0.000552s
+Write		10240k		1024k		4		10		0.000546s
+Write		10240k		1024k		5		10		0.000541s
+Write		10240k		1024k		6		10		0.000543s
+Write		10240k		1024k		7		10		0.002982s
+Write		10240k		1024k		8		10		0.000567s
+Write		10240k		1024k		9		10		0.000541s
+Total_Write		10240k		1024k		10		10		0.0008306s
+Read		10240k		1024k		10		0		0.000466s
+Read		10240k		1024k		10		1		0.000159s
+Read		10240k		1024k		10		2		0.00015s
+Read		10240k		1024k		10		3		0.000142s
+Read		10240k		1024k		10		4		0.000154s
+Read		10240k		1024k		10		5		0.000152s
+Read		10240k		1024k		10		6		0.000148s
+Read		10240k		1024k		10		7		0.000145s
+Read		10240k		1024k		10		8		0.000143s
+Read		10240k		1024k		10		9		0.000141s
+Total_Read		10240k		1024k		10		10		0.00018s
+AIO_Write		10240k		1024k		10		10		0.119629s
+AIO_Read		10240k		1024k		10		10		0.028034s
+MMap_Write		10240k		1024k		10		10		0.018581s
+MMap_Read		10240k		1024k		10		10		0.002002s
+UMmap_Write		10240k		1024k		10		10		0.007501s
+UMmap_Read		10240k		1024k		10		10		0.009646s
+Write		8192k		8192k		0		1		0.006135s
+Total_Write		8192k		8192k		1		1		0.006135s
+Read		8192k		8192k		1		0		0.003695s
+Total_Read		8192k		8192k		1		1		0.003695s
+AIO_Write		8192k		8192k		1		1		0.050155s
+AIO_Read		8192k		8192k		1		1		0.024827s
+MMap_Write		8192k		8192k		1		1		0.073661s
+MMap_Read		8192k		8192k		1		1		0.010587s
+UMmap_Write		8192k		8192k		1		1		0.035579s
+UMmap_Read		8192k		8192k		1		1		0.052693s
+Write		32768k		8192k		0		1		0.008781s
+Write		32768k		8192k		1		1		0.009295s
+Write		32768k		8192k		2		1		0.008832s
+Write		32768k		8192k		3		1		0.009374s
+Total_Write		32768k		8192k		4		1		0.0090705s
+Read		32768k		8192k		4		0		0.003746s
+Total_Read		8192k		8192k		4		1		0.003746s
+AIO_Write		32768k		8192k		4		1		0.181615s
+AIO_Read		32768k		8192k		4		1		0.002677s
+MMap_Write		32768k		8192k		4		1		0.107232s
+MMap_Read		32768k		8192k		4		1		0.007539s
+UMmap_Write		32768k		8192k		4		1		0.061786s
+UMmap_Read		32768k		8192k		4		1		0.045261s
+Write		32768k		8192k		0		4		0.006024s
+Write		32768k		8192k		1		4		0.006586s
+Write		32768k		8192k		2		4		0.00916s
+Write		32768k		8192k		3		4		0.00808s
+Total_Write		32768k		8192k		4		4		0.0074625s
+Read		32768k		8192k		4		0		0.003766s
+Read		32768k		8192k		4		1		0.00317s
+Read		32768k		8192k		4		2		0.001725s
+Read		32768k		8192k		4		3		0.001899s
+Total_Read		32768k		8192k		4		4		0.00264s
+AIO_Write		32768k		8192k		4		4		0.181398s
+AIO_Read		32768k		8192k		4		4		0.078089s
+MMap_Write		32768k		8192k		4		4		0.124131s
+MMap_Read		32768k		8192k		4		4		0.014114s
+UMmap_Write		32768k		8192k		4		4		0.070094s
+UMmap_Read		32768k		8192k		4		4		0.053333s
+Write		65536k		8192k		0		1		0.006184s
+Write		65536k		8192k		1		1		0.004911s
+Write		65536k		8192k		2		1		0.008048s
+Write		65536k		8192k		3		1		0.006692s
+Write		65536k		8192k		4		1		0.006692s
+Write		65536k		8192k		5		1		0.007118s
+Write		65536k		8192k		6		1		0.005085s
+Write		65536k		8192k		7		1		0.008163s
+Total_Write		65536k		8192k		8		1		0.00661162s
+Read		65536k		8192k		8		0		0.005329s
+Total_Read		8192k		8192k		8		1		0.005329s
+AIO_Write		65536k		8192k		8		1		0.388416s
+AIO_Read		65536k		8192k		8		1		0.003198s
+MMap_Write		65536k		8192k		8		1		0.108242s
+MMap_Read		65536k		8192k		8		1		0.013574s
+UMmap_Write		65536k		8192k		8		1		0.071261s
+UMmap_Read		65536k		8192k		8		1		0.034626s
+Write		65536k		8192k		0		4		0.009648s
+Write		65536k		8192k		1		4		0.004861s
+Write		65536k		8192k		2		4		0.009737s
+Write		65536k		8192k		3		4		0.013239s
+Write		65536k		8192k		4		4		0.005218s
+Write		65536k		8192k		5		4		0.008483s
+Write		65536k		8192k		6		4		0.007387s
+Write		65536k		8192k		7		4		0.006601s
+Total_Write		65536k		8192k		8		4		0.00814675s
+Read		65536k		8192k		8		0		0.003778s
+Read		65536k		8192k		8		1		0.002998s
+Read		65536k		8192k		8		2		0.001613s
+Read		65536k		8192k		8		3		0.001896s
+Total_Read		32768k		8192k		8		4		0.00257125s
+AIO_Write		65536k		8192k		8		4		0.376639s
+AIO_Read		65536k		8192k		8		4		0.063592s
+MMap_Write		65536k		8192k		8		4		0.100819s
+MMap_Read		65536k		8192k		8		4		0.013043s
+UMmap_Write		65536k		8192k		8		4		0.072156s
+UMmap_Read		65536k		8192k		8		4		0.04124s
+Write		65536k		8192k		0		8		0.007295s
+Write		65536k		8192k		1		8		0.009053s
+Write		65536k		8192k		2		8		0.007651s
+Write		65536k		8192k		3		8		0.005166s
+Write		65536k		8192k		4		8		0.008712s
+Write		65536k		8192k		5		8		0.006928s
+Write		65536k		8192k		6		8		0.006464s
+Write		65536k		8192k		7		8		0.004984s
+Total_Write		65536k		8192k		8		8		0.00703162s
+Read		65536k		8192k		8		0		0.007222s
+Read		65536k		8192k		8		1		0.001579s
+Read		65536k		8192k		8		2		0.001575s
+Read		65536k		8192k		8		3		0.002079s
+Read		65536k		8192k		8		4		0.005042s
+Read		65536k		8192k		8		5		0.002042s
+Read		65536k		8192k		8		6		0.002073s
+Read		65536k		8192k		8		7		0.001896s
+Total_Read		65536k		8192k		8		8		0.0029385s
+AIO_Write		65536k		8192k		8		8		0.427032s
+AIO_Read		65536k		8192k		8		8		0.086154s
+MMap_Write		65536k		8192k		8		8		0.074412s
+MMap_Read		65536k		8192k		8		8		0.019013s
+UMmap_Write		65536k		8192k		8		8		0.043615s
+UMmap_Read		65536k		8192k		8		8		0.059044s
+Write		81920k		8192k		0		1		0.006451s
+Write		81920k		8192k		1		1		0.005005s
+Write		81920k		8192k		2		1		0.008005s
+Write		81920k		8192k		3		1		0.006635s
+Write		81920k		8192k		4		1		0.006463s
+Write		81920k		8192k		5		1		0.007208s
+Write		81920k		8192k		6		1		0.006609s
+Write		81920k		8192k		7		1		0.006556s
+Write		81920k		8192k		8		1		0.006511s
+Write		81920k		8192k		9		1		0.008859s
+Total_Write		81920k		8192k		10		1		0.0068302s
+Read		81920k		8192k		10		0		0.007896s
+Total_Read		8192k		8192k		10		1		0.007896s
+AIO_Write		81920k		8192k		10		1		0.545595s
+AIO_Read		81920k		8192k		10		1		0.009661s
+MMap_Write		81920k		8192k		10		1		0.099532s
+MMap_Read		81920k		8192k		10		1		0.01192s
+UMmap_Write		81920k		8192k		10		1		0.051061s
+UMmap_Read		81920k		8192k		10		1		0.051606s
+Write		81920k		8192k		0		4		0.006053s
+Write		81920k		8192k		1		4		0.004779s
+Write		81920k		8192k		2		4		0.010044s
+Write		81920k		8192k		3		4		0.006157s
+Write		81920k		8192k		4		4		0.006042s
+Write		81920k		8192k		5		4		0.005025s
+Write		81920k		8192k		6		4		0.008814s
+Write		81920k		8192k		7		4		0.00698s
+Write		81920k		8192k		8		4		0.007059s
+Write		81920k		8192k		9		4		0.005034s
+Total_Write		81920k		8192k		10		4		0.0065987s
+Read		81920k		8192k		10		0		0.006885s
+Read		81920k		8192k		10		1		0.001798s
+Read		81920k		8192k		10		2		0.001634s
+Read		81920k		8192k		10		3		0.001586s
+Total_Read		32768k		8192k		10		4		0.00297575s
+AIO_Write		81920k		8192k		10		4		0.494864s
+AIO_Read		81920k		8192k		10		4		0.040941s
+MMap_Write		81920k		8192k		10		4		0.072992s
+MMap_Read		81920k		8192k		10		4		0.014281s
+UMmap_Write		81920k		8192k		10		4		0.050655s
+UMmap_Read		81920k		8192k		10		4		0.056401s
+Write		81920k		8192k		0		8		0.006037s
+Write		81920k		8192k		1		8		0.009213s
+Write		81920k		8192k		2		8		0.010171s
+Write		81920k		8192k		3		8		0.011329s
+Write		81920k		8192k		4		8		0.007018s
+Write		81920k		8192k		5		8		0.010349s
+Write		81920k		8192k		6		8		0.006848s
+Write		81920k		8192k		7		8		0.007089s
+Write		81920k		8192k		8		8		0.006513s
+Write		81920k		8192k		9		8		0.006474s
+Total_Write		81920k		8192k		10		8		0.0081041s
+Read		81920k		8192k		10		0		0.005612s
+Read		81920k		8192k		10		1		0.001641s
+Read		81920k		8192k		10		2		0.001894s
+Read		81920k		8192k		10		3		0.001568s
+Read		81920k		8192k		10		4		0.001593s
+Read		81920k		8192k		10		5		0.002109s
+Read		81920k		8192k		10		6		0.001921s
+Read		81920k		8192k		10		7		0.001964s
+Total_Read		65536k		8192k		10		8		0.00228775s
+AIO_Write		81920k		8192k		10		8		0.544342s
+AIO_Read		81920k		8192k		10		8		0.05894s
+MMap_Write		81920k		8192k		10		8		0.07538s
+MMap_Read		81920k		8192k		10		8		0.017258s
+UMmap_Write		81920k		8192k		10		8		0.045872s
+UMmap_Read		81920k		8192k		10		8		0.059887s
+Write		81920k		8192k		0		10		0.006122s
+Write		81920k		8192k		1		10		0.009277s
+Write		81920k		8192k		2		10		0.006346s
+Write		81920k		8192k		3		10		0.01185s
+Write		81920k		8192k		4		10		0.006835s
+Write		81920k		8192k		5		10		0.005091s
+Write		81920k		8192k		6		10		0.008673s
+Write		81920k		8192k		7		10		0.007637s
+Write		81920k		8192k		8		10		0.006779s
+Write		81920k		8192k		9		10		0.006191s
+Total_Write		81920k		8192k		10		10		0.0074801s
+Read		81920k		8192k		10		0		0.004101s
+Read		81920k		8192k		10		1		0.001649s
+Read		81920k		8192k		10		2		0.001607s
+Read		81920k		8192k		10		3		0.003743s
+Read		81920k		8192k		10		4		0.001558s
+Read		81920k		8192k		10		5		0.001784s
+Read		81920k		8192k		10		6		0.002197s
+Read		81920k		8192k		10		7		0.00194s
+Read		81920k		8192k		10		8		0.001943s
+Read		81920k		8192k		10		9		0.002239s
+Total_Read		81920k		8192k		10		10		0.0022761s
+AIO_Write		81920k		8192k		10		10		0.548296s
+AIO_Read		81920k		8192k		10		10		0.089937s
+MMap_Write		81920k		8192k		10		10		0.076909s
+MMap_Read		81920k		8192k		10		10		0.020437s
+UMmap_Write		81920k		8192k		10		10		0.046818s
+UMmap_Read		81920k		8192k		10		10		0.051344s
+Write		16384k		16384k		0		1		0.01098s
+Total_Write		16384k		16384k		1		1		0.01098s
+Read		16384k		16384k		1		0		0.007851s
+Total_Read		16384k		16384k		1		1		0.007851s
+AIO_Write		16384k		16384k		1		1		0.089758s
+AIO_Read		16384k		16384k		1		1		0.026114s
+MMap_Write		16384k		16384k		1		1		0.124724s
+MMap_Read		16384k		16384k		1		1		0.018105s
+UMmap_Write		16384k		16384k		1		1		0.0646s
+UMmap_Read		16384k		16384k		1		1		0.104341s
+Write		65536k		16384k		0		1		0.012835s
+Write		65536k		16384k		1		1		0.011227s
+Write		65536k		16384k		2		1		0.011954s
+Write		65536k		16384k		3		1		0.012202s
+Total_Write		65536k		16384k		4		1		0.0120545s
+Read		65536k		16384k		4		0		0.008511s
+Total_Read		16384k		16384k		4		1		0.008511s
+AIO_Write		65536k		16384k		4		1		0.476498s
+AIO_Read		65536k		16384k		4		1		0.004295s
+MMap_Write		65536k		16384k		4		1		0.164639s
+MMap_Read		65536k		16384k		4		1		0.01813s
+UMmap_Write		65536k		16384k		4		1		0.061109s
+UMmap_Read		65536k		16384k		4		1		0.086798s
+Write		65536k		16384k		0		4		0.011073s
+Write		65536k		16384k		1		4		0.011153s
+Write		65536k		16384k		2		4		0.011878s
+Write		65536k		16384k		3		4		0.01676s
+Total_Write		65536k		16384k		4		4		0.012716s
+Read		65536k		16384k		4		0		0.010879s
+Read		65536k		16384k		4		1		0.010307s
+Read		65536k		16384k		4		2		0.006372s
+Read		65536k		16384k		4		3		0.003776s
+Total_Read		65536k		16384k		4		4		0.0078335s
+AIO_Write		65536k		16384k		4		4		0.466339s
+AIO_Read		65536k		16384k		4		4		0.083035s
+MMap_Write		65536k		16384k		4		4		0.134797s
+MMap_Read		65536k		16384k		4		4		0.025777s
+UMmap_Write		65536k		16384k		4		4		0.064414s
+UMmap_Read		65536k		16384k		4		4		0.100587s
+Write		131072k		16384k		0		1		0.018531s
+Write		131072k		16384k		1		1		0.012879s
+Write		131072k		16384k		2		1		0.012329s
+Write		131072k		16384k		3		1		0.012714s
+Write		131072k		16384k		4		1		0.01369s
+Write		131072k		16384k		5		1		0.025184s
+Write		131072k		16384k		6		1		0.020707s
+Write		131072k		16384k		7		1		0.015215s
+Total_Write		131072k		16384k		8		1		0.0164061s
+Read		131072k		16384k		8		0		0.008208s
+Total_Read		16384k		16384k		8		1		0.008208s
+AIO_Write		131072k		16384k		8		1		0.866925s
+AIO_Read		131072k		16384k		8		1		0.009081s
+MMap_Write		131072k		16384k		8		1		0.164099s
+MMap_Read		131072k		16384k		8		1		0.01812s
+UMmap_Write		131072k		16384k		8		1		0.100218s
+UMmap_Read		131072k		16384k		8		1		0.070154s
+Write		131072k		16384k		0		4		0.022835s
+Write		131072k		16384k		1		4		0.02003s
+Write		131072k		16384k		2		4		0.017939s
+Write		131072k		16384k		3		4		0.020227s
+Write		131072k		16384k		4		4		0.020585s
+Write		131072k		16384k		5		4		0.019026s
+Write		131072k		16384k		6		4		0.018352s
+Write		131072k		16384k		7		4		0.022424s
+Total_Write		131072k		16384k		8		4		0.0201772s
+Read		131072k		16384k		8		0		0.012058s
+Read		131072k		16384k		8		1		0.013359s
+Read		131072k		16384k		8		2		0.003188s
+Read		131072k		16384k		8		3		0.003681s
+Total_Read		65536k		16384k		8		4		0.0080715s
+AIO_Write		131072k		16384k		8		4		0.872345s
+AIO_Read		131072k		16384k		8		4		0.081245s
+MMap_Write		131072k		16384k		8		4		0.248274s
+MMap_Read		131072k		16384k		8		4		0.02469s
+UMmap_Write		131072k		16384k		8		4		0.14343s
+UMmap_Read		131072k		16384k		8		4		0.081543s
+Write		131072k		16384k		0		8		0.011467s
+Write		131072k		16384k		1		8		0.011474s
+Write		131072k		16384k		2		8		0.012121s
+Write		131072k		16384k		3		8		0.011531s
+Write		131072k		16384k		4		8		0.012403s
+Write		131072k		16384k		5		8		0.01212s
+Write		131072k		16384k		6		8		0.012123s
+Write		131072k		16384k		7		8		0.011889s
+Total_Write		131072k		16384k		8		8		0.011891s
+Read		131072k		16384k		8		0		0.016566s
+Read		131072k		16384k		8		1		0.003302s
+Read		131072k		16384k		8		2		0.009971s
+Read		131072k		16384k		8		3		0.003183s
+Read		131072k		16384k		8		4		0.008772s
+Read		131072k		16384k		8		5		0.004765s
+Read		131072k		16384k		8		6		0.004486s
+Read		131072k		16384k		8		7		0.003777s
+Total_Read		131072k		16384k		8		8		0.00685275s
+AIO_Write		131072k		16384k		8		8		0.796326s
+AIO_Read		131072k		16384k		8		8		0.134889s
+MMap_Write		131072k		16384k		8		8		0.216608s
+MMap_Read		131072k		16384k		8		8		0.032956s
+UMmap_Write		131072k		16384k		8		8		0.145511s
+UMmap_Read		131072k		16384k		8		8		0.099846s
+Write		163840k		16384k		0		1		0.011096s
+Write		163840k		16384k		1		1		0.011811s
+Write		163840k		16384k		2		1		0.011343s
+Write		163840k		16384k		3		1		0.011277s
+Write		163840k		16384k		4		1		0.011854s
+Write		163840k		16384k		5		1		0.011989s
+Write		163840k		16384k		6		1		0.011746s
+Write		163840k		16384k		7		1		0.018934s
+Write		163840k		16384k		8		1		0.011656s
+Write		163840k		16384k		9		1		0.011772s
+Total_Write		163840k		16384k		10		1		0.0123478s
+Read		163840k		16384k		10		0		0.009547s
+Total_Read		16384k		16384k		10		1		0.009547s
+AIO_Write		163840k		16384k		10		1		0.98404s
+AIO_Read		163840k		16384k		10		1		0.011151s
+MMap_Write		163840k		16384k		10		1		0.229131s
+MMap_Read		163840k		16384k		10		1		0.021425s
+UMmap_Write		163840k		16384k		10		1		0.116542s
+UMmap_Read		163840k		16384k		10		1		0.087405s
+Write		163840k		16384k		0		4		0.012947s
+Write		163840k		16384k		1		4		0.011303s
+Write		163840k		16384k		2		4		0.01125s
+Write		163840k		16384k		3		4		0.011233s
+Write		163840k		16384k		4		4		0.012525s
+Write		163840k		16384k		5		4		0.012173s
+Write		163840k		16384k		6		4		0.012645s
+Write		163840k		16384k		7		4		0.01247s
+Write		163840k		16384k		8		4		0.011749s
+Write		163840k		16384k		9		4		0.013649s
+Total_Write		163840k		16384k		10		4		0.0121944s
+Read		163840k		16384k		10		0		0.009838s
+Read		163840k		16384k		10		1		0.003449s
+Read		163840k		16384k		10		2		0.003215s
+Read		163840k		16384k		10		3		0.00324s
+Total_Read		65536k		16384k		10		4		0.0049355s
+AIO_Write		163840k		16384k		10		4		0.968631s
+AIO_Read		163840k		16384k		10		4		0.080777s
+MMap_Write		163840k		16384k		10		4		0.149638s
+MMap_Read		163840k		16384k		10		4		0.025343s
+UMmap_Write		163840k		16384k		10		4		0.088286s
+UMmap_Read		163840k		16384k		10		4		0.100748s
+Write		163840k		16384k		0		8		0.012522s
+Write		163840k		16384k		1		8		0.01145s
+Write		163840k		16384k		2		8		0.011731s
+Write		163840k		16384k		3		8		0.011416s
+Write		163840k		16384k		4		8		0.011392s
+Write		163840k		16384k		5		8		0.014777s
+Write		163840k		16384k		6		8		0.015259s
+Write		163840k		16384k		7		8		0.01301s
+Write		163840k		16384k		8		8		0.012083s
+Write		163840k		16384k		9		8		0.013025s
+Total_Write		163840k		16384k		10		8		0.0126665s
+Read		163840k		16384k		10		0		0.014237s
+Read		163840k		16384k		10		1		0.003758s
+Read		163840k		16384k		10		2		0.003381s
+Read		163840k		16384k		10		3		0.008036s
+Read		163840k		16384k		10		4		0.009251s
+Read		163840k		16384k		10		5		0.004244s
+Read		163840k		16384k		10		6		0.008843s
+Read		163840k		16384k		10		7		0.004158s
+Total_Read		131072k		16384k		10		8		0.0069885s
+AIO_Write		163840k		16384k		10		8		0.93623s
+AIO_Read		163840k		16384k		10		8		0.129517s
+MMap_Write		163840k		16384k		10		8		0.216001s
+MMap_Read		163840k		16384k		10		8		0.032107s
+UMmap_Write		163840k		16384k		10		8		0.08999s
+UMmap_Read		163840k		16384k		10		8		0.12401s
+Write		163840k		16384k		0		10		0.011291s
+Write		163840k		16384k		1		10		0.011456s
+Write		163840k		16384k		2		10		0.012s
+Write		163840k		16384k		3		10		0.011088s
+Write		163840k		16384k		4		10		0.01159s
+Write		163840k		16384k		5		10		0.012265s
+Write		163840k		16384k		6		10		0.012031s
+Write		163840k		16384k		7		10		0.013341s
+Write		163840k		16384k		8		10		0.016131s
+Write		163840k		16384k		9		10		0.015135s
+Total_Write		163840k		16384k		10		10		0.0126328s
+Read		163840k		16384k		10		0		0.017629s
+Read		163840k		16384k		10		1		0.00738s
+Read		163840k		16384k		10		2		0.003248s
+Read		163840k		16384k		10		3		0.011298s
+Read		163840k		16384k		10		4		0.003668s
+Read		163840k		16384k		10		5		0.004011s
+Read		163840k		16384k		10		6		0.010138s
+Read		163840k		16384k		10		7		0.006914s
+Read		163840k		16384k		10		8		0.004068s
+Read		163840k		16384k		10		9		0.003623s
+Total_Read		163840k		16384k		10		10		0.0071977s
+AIO_Write		163840k		16384k		10		10		0.962969s
+AIO_Read		163840k		16384k		10		10		0.149825s
+MMap_Write		163840k		16384k		10		10		0.259946s
+MMap_Read		163840k		16384k		10		10		0.059673s
+UMmap_Write		163840k		16384k		10		10		0.136633s
+UMmap_Read		163840k		16384k		10		10		0.108416s

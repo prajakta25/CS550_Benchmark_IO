@@ -65,7 +65,7 @@ class MmapIO : public FileIO {
             }
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "MMap_Read\t\t" << ((bs*rcnt)/KB) << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "MMap_Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             close(fd);
             close(f);
             
@@ -115,7 +115,7 @@ class MmapIO : public FileIO {
             munmap(map, (bs*wcnt));
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "MMap_Write\t\t" << (bs*wcnt)/KB << "\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "MMap_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             close(fd);
         }
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
