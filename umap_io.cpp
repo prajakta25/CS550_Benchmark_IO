@@ -22,6 +22,7 @@ namespace bench {
 class UmapIO : public FileIO {
     public:
         void Read(std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt ) {
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
             
             int fd = open(fn.c_str(), O_RDWR, S_IRWXU | S_IRWXG | S_IRWXO);
@@ -30,8 +31,10 @@ class UmapIO : public FileIO {
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
             std::cout << "\nUMap Read\t" << (bs*rcnt/KB)<< "KB\t" << wcnt << "\t" << rcnt << "\t" << time_taken << "s" << std::endl;
             close(fd);
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         }
         void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
             if ( unlink(fn.c_str()) ) {
@@ -108,6 +111,7 @@ class UmapIO : public FileIO {
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
             std::cout << "UMap Write\t" << (bs*wcnt)/KB << "KB\t"<< wcnt << "\t" << rcnt << "\t" << time_taken << "s" << std::endl;
             close(fd);
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         }
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
         void AsyncWrite(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {  }

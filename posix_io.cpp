@@ -24,6 +24,7 @@ class PosixIO : public FileIO
 public:
     void Read(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt )
     {
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         double sum=0.00;
         char *rbuffer = (char *)malloc(sizeof(char) * bs);
         int fd = open(fn.c_str(),  O_RDONLY, 0);
@@ -43,9 +44,11 @@ public:
         std::cout << "Total_Read\t\t" << (bs*rcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << (sum/rcnt) << "s" << std::endl;
         close(fd);
         free(rbuffer);
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
     }
     void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt )
     {
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         double sum=0.00;
         char *wbuffer = (char *)malloc(sizeof(char) * bs);
         int f = open(fn.c_str(),  O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
@@ -77,9 +80,11 @@ public:
         std::cout << "Total_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << (sum/wcnt) << "s" << std::endl;
         close(f);
         free(wbuffer);
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
     }
     void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt)
     {
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         char *rbuffer = (char *)malloc(sizeof(char) * bs*rcnt);
@@ -117,9 +122,11 @@ public:
             std::cout << "Error!" << std::endl;
         close(file);
         free(rbuffer);
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
     }
     void AsyncWrite(std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt )
     {
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         struct aiocb cb;
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         int rec_size = bs*wcnt;
@@ -172,6 +179,7 @@ public:
         std::cout << "AIO_Write\t\t" << rec_size/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         close(fd);
         free(wbuffer);
+        system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
     }
     void Poll () {
          std::cout<<"";

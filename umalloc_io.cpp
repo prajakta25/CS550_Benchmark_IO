@@ -22,6 +22,7 @@ namespace bench {
 class UmallocIO : public FileIO {
     public:
         void Read(std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt ) {
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
             
             //source file
@@ -54,8 +55,10 @@ class UmallocIO : public FileIO {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
             std::cout << "UMmap_Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         }
         void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
             char *buf = (char *)umalloc(fn.c_str(),(bs*wcnt));
             if (!(buf)) { 
@@ -75,6 +78,7 @@ class UmallocIO : public FileIO {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
             std::cout << "UMmap_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             
         }
         void AsyncRead(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {}
