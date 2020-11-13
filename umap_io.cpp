@@ -109,7 +109,7 @@ class UmapIO : public FileIO {
             
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "UMap Write\t" << (bs*wcnt)/KB << "KB\t"<< wcnt << "\t" << rcnt << "\t" << time_taken << "s" << std::endl;
+            std::cout << "UMap Write\t" << (bs*wcnt)/KB /KB<< "KB\t"<< wcnt << "\t" << rcnt << "\t" << time_taken << "s" << std::endl;
             close(fd);
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         }

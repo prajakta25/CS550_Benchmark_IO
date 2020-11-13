@@ -1,17 +1,17 @@
 #!/bin/bash
-echo -e "I_O \t\tFile_Size_KB\t\tBuffer_size_KB \t\tWrite_Count \t\tRead_Count \t\tTime_Taken_s" > output.txt
+echo -e "I_O \t\tFile_Size_MB\t\tBuffer_size_MB \t\tWrite_Count \t\tRead_Count \t\tTime_Taken_s" > output.txt
 
 #List of I/Os to be called
 io=(Posix Mmap Ummap)
 
 #List of buffer size to be called
-buf=(1k 8k 64K 1m 8m 16m)
+buf=(100m 200m 300m 400m)
 
 #List of write count to be called
-wcnt=(1 4 8 10)
+wcnt=(1 5 10)
 
 #List of read count to be called
-rcnt=(1 4 8 10)
+rcnt=(1 5 10)
 
 for ((i=0; i< ${#buf[*]}; i++ ))
 do

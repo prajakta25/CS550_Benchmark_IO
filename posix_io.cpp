@@ -35,13 +35,14 @@ public:
     
         for(int i=0; i<rcnt; i++) {
             std::chrono::steady_clock::time_point b = std::chrono::steady_clock::now();
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             read(fd, rbuffer, bs);
             std::chrono::steady_clock::time_point e = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(e - b).count()) / 1000000.0;
             sum+=time_taken;
-            std::cout << "Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< wcnt << "\t\t" << i << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "Read\t\t" << (bs*wcnt)/KB/KB << "m\t\t" << (double)bs/KB/KB <<"m\t\t"<< wcnt << "\t\t" << i << "\t\t" << time_taken << "s" << std::endl;
         }
-        std::cout << "Total_Read\t\t" << (bs*rcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << (sum/rcnt) << "s" << std::endl;
+        std::cout << "Total_Read\t\t" << (bs*rcnt)/KB/KB << "m\t\t" << (double)bs/KB/KB <<"m\t\t"<< wcnt << "\t\t" << rcnt << "\t\t" << (sum/rcnt) << "s" << std::endl;
         close(fd);
         free(rbuffer);
         system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
@@ -67,17 +68,18 @@ public:
             int n=0;
             if ((n=write(f, wbuffer, bs)) == -1)
             {  
-                std::cout << " Error at write(): " << strerror(errno) << std::endl;
+                //std::cout << " Error at write(): " << strerror(errno) << std::endl;
                 close(f);
-                exit(2);
+                //exit(2);
             }
+            system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
              std::chrono::steady_clock::time_point e = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(e - b).count()) / 1000000.0;
             sum+=time_taken;
-            std::cout << "Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t"<< i << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "Write\t\t" << (bs*wcnt)/KB/KB << "m\t\t" << (double)bs/KB/KB <<"m\t\t"<< i << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
 
         }
-        std::cout << "Total_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << (sum/wcnt) << "s" << std::endl;
+        std::cout << "Total_Write\t\t" << (bs*wcnt)/KB/KB << "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << (sum/wcnt) << "s" << std::endl;
         close(f);
         free(wbuffer);
         system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
@@ -116,7 +118,7 @@ public:
         {
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "AIO_Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "AIO_Read\t\t" << (bs*wcnt)/KB/KB << "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         }
         else 
             std::cout << "Error!" << std::endl;
@@ -176,7 +178,7 @@ public:
         }
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-        std::cout << "AIO_Write\t\t" << rec_size/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+        std::cout << "AIO_Write\t\t" << rec_size/KB/KB << "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
         close(fd);
         free(wbuffer);
         system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
@@ -204,7 +206,7 @@ public:
         std::cout<<"Number of hard links : "<<buf.st_nlink<<"\n";
         std::cout<<"User ID of owner : "<<buf.st_uid<<"\n";
         std::cout<<"Group ID of owner : "<<buf.st_gid<<"\n";
-        std::cout<<"File Size (KB) : "<<buf.st_size/KB<<"\n";
+        std::cout<<"File Size (KB) : "<<buf.st_size/KB/KB<<"\n";
         std::cout<<"Number of blocks allocated : "<<buf.st_blocks<<"\n";
         std::cout<<"Time of last access : "<<ctime(&buf.st_atime);
         std::cout<<"Time of last modification : "<<ctime(&buf.st_mtime);

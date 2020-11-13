@@ -24,7 +24,6 @@ class UmallocIO : public FileIO {
         void Read(std::string fn , size_t bs,  uint32_t wcnt, uint32_t rcnt ) {
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-            
             //source file
             char* map = (char *)umalloc(fn.c_str(),(bs*wcnt));
             if (!(map)) { 
@@ -40,8 +39,7 @@ class UmallocIO : public FileIO {
             }
 
             for(int i = 0; i < rcnt; ++i) {
-              memcpy(dmap , map, bs);
-              
+              memcpy(dmap + (i*bs) , map + (i*bs), bs);
             }
 
              // Synchronize with storage to ensure that the latest changes are flushed
@@ -54,12 +52,33 @@ class UmallocIO : public FileIO {
 
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "UMmap_Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "UMmap_Read\t\t" << (bs*wcnt)/KB /KB<< "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         }
         void Write(std::string fn , size_t bs, uint32_t wcnt, uint32_t rcnt ) {
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+            int fd = open(fn.c_str(),  O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
+            if (fd == -1)
+            {
+                std::cout << "File cannot be opened\n";
+            }
+            // Stretch the file size to the size of the (mmapped) array of ints
+            
+            int result = lseek(fd, (bs*wcnt), SEEK_SET);
+            if (result == -1)
+            {
+                std::cout << " Error calling lseek() " << strerror(errno) << std::endl;
+                close(fd);
+                exit(2);
+            }
+            result = write(fd, "", 1);
+            if (result != 1) 
+            {
+                std::cout << " Error writing last byte of the file " << strerror(errno) << std::endl;
+                close(fd);
+                exit(2);
+            }
             char *buf = (char *)umalloc(fn.c_str(),(bs*wcnt));
             if (!(buf)) { 
                 std::cout<< "Error: "<<strerror(errno)<< "error no = "<< errno<<std::endl;
@@ -68,7 +87,7 @@ class UmallocIO : public FileIO {
 
              for (off_t i = 0; i < wcnt; i++)
             {
-                memset(buf,'a',bs);
+                memset(buf + (i*bs) ,'a',bs);
             }
              // Synchronize with storage to ensure that the latest changes are flushed
             usync(buf);
@@ -77,7 +96,7 @@ class UmallocIO : public FileIO {
             ufree(buf);
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "UMmap_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "UMmap_Write\t\t" << (bs*wcnt)/KB /KB<< "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
             
         }

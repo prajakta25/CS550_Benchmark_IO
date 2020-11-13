@@ -53,7 +53,7 @@ class MmapIO : public FileIO {
             }
 
             for(int i = 0; i < rcnt; ++i) {
-              memcpy(dmap , map, bs);
+              memcpy(dmap + (i*bs) , map + (i*bs), bs);
               
             }
 
@@ -66,7 +66,7 @@ class MmapIO : public FileIO {
             }
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "MMap_Read\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "MMap_Read\t\t" << (bs*wcnt)/KB/KB<< "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             close(fd);
             close(f);
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
@@ -111,14 +111,14 @@ class MmapIO : public FileIO {
             }
             
             for(int i = 0; i < wcnt; ++i) {
-              memcpy(map , wbuffer, bs);
+              memcpy(map + (i*bs), wbuffer, bs);
               
             }
             msync(map, bs*wcnt, MS_SYNC);
             munmap(map, (bs*wcnt));
             std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
             double time_taken = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0;
-            std::cout << "MMap_Write\t\t" << (bs*wcnt)/KB << "k\t\t" << bs/KB <<"k\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
+            std::cout << "MMap_Write\t\t" << (bs*wcnt)/KB /KB<< "m\t\t" << (double)bs/KB/KB <<"m\t\t" << wcnt << "\t\t" << rcnt << "\t\t" << time_taken << "s" << std::endl;
             close(fd);
             system("sudo sh -c \"sync && echo 3 > /proc/sys/vm/drop_caches\"");
         }
