@@ -33,7 +33,7 @@ class MmapIO : public FileIO {
             if(err < 0) {
                 std::cout << "file cannot be opened\n";
             }
-            ftruncate(f, statbuf.st_size);
+            ftruncate(f, (bs*rcnt));
             //source file
             char* map = (char*)mmap(NULL, statbuf.st_size, PROT_READ, MAP_SHARED, fd, 0);
             if (map == MAP_FAILED) 
@@ -44,7 +44,7 @@ class MmapIO : public FileIO {
             }
 
             //destination file
-            char* dmap = (char*)mmap(NULL, statbuf.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, f, 0);
+            char* dmap = (char*)mmap(NULL, (bs*rcnt), PROT_READ | PROT_WRITE, MAP_SHARED, f, 0);
             if (dmap == MAP_FAILED) 
             {
                 std::cout << " Error mmapping the file " << strerror(errno) << std::endl;
@@ -52,13 +52,14 @@ class MmapIO : public FileIO {
                 exit(2);
             }
 
+            int k=0;
             for(int i = 0; i < rcnt; ++i) {
-              memcpy(dmap + (i*bs) , map + (i*bs), bs);
+              memcpy(dmap + (i*bs) , map + (k*bs), bs);
               
             }
 
             err = munmap(map, statbuf.st_size);
-            munmap(dmap, statbuf.st_size);
+            munmap(dmap, (bs*rcnt));
 
             if(err != 0){
                 std::cout<<"UnMapping Failed\n";
