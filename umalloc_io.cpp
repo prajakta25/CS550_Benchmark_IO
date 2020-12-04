@@ -39,7 +39,7 @@ class UmallocIO : public FileIO {
             }
 
             for(int i = 0; i < rcnt; ++i) {
-              memcpy(dmap + (i*bs) , map + (i*bs), bs);
+              memcpy(dmap + (i*bs) , map, bs);
             }
 
              // Synchronize with storage to ensure that the latest changes are flushed
